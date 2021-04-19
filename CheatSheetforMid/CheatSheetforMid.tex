@@ -1,0 +1,101 @@
+% Electrodynamics CheatSheet for Mid
+\documentclass[10pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{multicol}
+\geometry{left=.5cm,right=.5cm,top=.5cm,bottom=.5cm}
+\setlength{\columnseprule}{1pt}
+\begin{document}
+\begin{multicols}{2}
+\noindent\textbf{Chap1}\\
+\textbf{库仑定律}$\vec{F}=Q'\vec{E}=\frac{QQ'\vec{r}}{4\pi\epsilon_0r^3}$\\
+\textbf{电场叠加性}$\vec{E}=\sum_{i=1}\frac{Q_i\vec{r}_i}{4\pi\epsilon_0r_i^3}=\int_V\frac{\rho(\vec{x}')\vec{r}dV'}{4\pi\epsilon_0r^3}$\\
+\textbf{高斯定理\&电场散度}$\oint_S\vec{E}\cdot d\vec{S}=\frac{1}{\epsilon_0}\sum_iQ_i=\frac{1}{\epsilon_0}\int_V\rho dV$ or $\nabla\cdot\vec{E}=\frac{\rho}{\epsilon_0}$\\
+\textbf{静电场旋度}$\nabla\times\vec{E}=0$\\
+\textbf{电荷守恒定律}$\oint_S\vec{J}\cdot d\vec{S}=-\int_V\frac{\partial\rho}{\partial t}dV$ or $\nabla\cdot\vec{J}+\frac{\partial\rho}{\partial t}=0$\\
+\textbf{毕奥-萨伐尔定律}$\vec{B}(\vec{x})=\frac{\mu_0}{4\pi}\int_V\frac{\vec{J}(\vec{x}')\times \vec{r}}{r^3}dV'=\frac{\mu_0}{4\pi}\oint_L\frac{Id\vec{l}\times\vec{r}}{r^3}$\\
+\textbf{磁场环量\&旋度}$\oint\vec{B}\cdot d\vec{l}=\mu_0I=\mu_0\int_S\vec{J}\cdot d\vec{S}$ or $\nabla\times\vec{B}=\mu_0\vec{J}$\\
+\textbf{电磁感应定律}$\mathscr{E}=\oint_L\vec{E}\cdot d\vec{l}=-\frac{d}{dt}\int_S\vec{B}\cdot d\vec{S}$ or $\nabla\times\vec{E}=-\frac{\partial B}{\partial t}$\\
+\textbf{位移电流}$\vec{J}_D=\epsilon_0\frac{\partial\vec{E}}{\partial t}$ so $\nabla\times\vec{B}=\mu_0(\vec{J}+\vec{J}_D)$\\
+\textbf{麦克斯韦方程组}$\left\{\begin{array}{l}\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}\\\nabla\times\vec{B}=\mu_0(\vec{J}+\epsilon_0\frac{\partial\vec{E}}{\partial t})\\\nabla\cdot\vec{E}=\frac{\rho}{\epsilon_0}\\
+\nabla\cdot\vec{B}=0\end{array}\right.$\\
+\textbf{洛伦兹力密度}$\vec{f}=\rho\vec{E}+\vec{J}\times\vec{B}$\textbf{对点电荷}$\vec{F}=q\vec{E}+q\vec{v}\times\vec{B}$\\
+\textbf{介质的极化 电极化强度矢量}$\vec{P}=\frac{\sum_i\vec{P_i}}{\Delta V}$\textbf{束缚电荷密度}$\int_V\rho_PdV=-\oint_S\vec{P}\cdot d\vec{S}$ or $\rho_P=-\nabla\cdot\vec{P}$\textbf{介质分界面束缚电荷面密度}$\sigma_P=-\vec{e}_n\cdot(\vec{P}_2-\vec{P}_1)$\textbf{高斯定理}改写为$\epsilon_0\nabla\cdot\vec{E}=\rho_f+\rho_P$ or $\nabla\cdot(\epsilon_0\vec{E}+\vec{P})=\rho_f$ def\textbf{电位移矢量}$\vec{D}=\epsilon_0\vec{E}+\vec{P}$ so $\nabla\vec{D}=\rho_f$\textbf{对各向同性线性介质}$P=\chi_e\epsilon_0\vec{E}$ so $\vec{D}=\epsilon\vec{E}$其中$\chi_e$--极化率$\epsilon=\epsilon_r\epsilon_0$--电容率$\epsilon_r=1+\chi_e$--相对电容率\\
+\textbf{介质的磁化 分子电流磁矩}$\vec{m}=i\vec{a}$其中$i$--分子电流$\vec{a}$--分子电流环绕面积\textbf{磁化强度}$\vec{M}=\frac{\sum_i\vec{m}_i}{\Delta V}$\textbf{磁化电流}$I_M=\oint_L\vec{M}\cdot d\vec{l}$\textbf{磁化电流密度}$\vec{J}_M=\nabla\times\vec{M}$当电场变化时,介质的极化强度矢量$\vec{P}=\frac{\sum_ie_i\vec{x}_i}{\Delta V}$($\Delta V$中每个带电粒子的位置为$\vec{x}_i$,电荷为$e_i$)发生变化,产生极化电流密度$\vec{J}_P=\frac{\partial\vec{P}}{\partial t}=\frac{\sum_ie_i\vec{v}_i}{\Delta V}$ so \textbf{磁场的旋度}改写为$\frac{1}{\mu_0}\nabla\times\vec{B}=\vec{J}_f+\vec{J}_M+\vec{J}_P+\epsilon_0\frac{\partial E}{\partial t}$ or $\nabla\times(\frac{\vec{B}}{\mu_0}-\vec{M})=\vec{J}_f+\frac{\partial\vec{D}}{\partial t}$ def\textbf{磁场强度}$\nabla\times\vec{H}=\vec{J}_f+\frac{\partial\vec{D}}{\partial t}$\textbf{对各向同性非铁磁物质}$\vec{M}=\chi_M\vec{H}$ so $\vec{B}=\mu\vec{H}$其中对各向同性线性介质$\chi_M$--磁化率$\mu=\mu_r\mu_0$--磁导率$\mu_r=1+\chi_M$\\
+\textbf{介质中的麦克斯韦方程组}$\left\{\begin{array}{l}\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t}\\\nabla\times\vec{H}=\vec{J}+\frac{\partial\vec{D}}{\partial t}\\\nabla\cdot\vec{D}=\rho\\\nabla\cdot{B}=0\end{array}\right.$其中$\vec{D}=\epsilon\vec{E}$,$\vec{B}=\mu\vec{H}$\textbf{欧姆定律}$J=\sigma\vec{E}$自此开始略去下角标$f$\\
+\textbf{对于各向异性介质}$D_i=\sum_{j=1}^3\epsilon_{ij}E_{j}$\textbf{强磁场下非线性}$D_i=\sum_{j}\epsilon_{ij}E_j+\sum_{j,k}\epsilon_{ijk}E_jE_k+\sum_{jkl}\epsilon_{ijkl}E_jE_kE_l+\cdots$而$\vec{B}$与$\vec{H}$的关系依赖于磁化过程,一般用磁化曲线和磁滞回线表示\\
+\textbf{麦克斯韦方程积分形式}$\left\{\begin{array}{l}\oint_L\vec{E}\cdot d\vec{l}=-\frac{d}{dt}\int_S\vec{B}\cdot d\vec{S}\\\oint_L\vec{H}\cdot d\vec{l}=I_f+\frac{d}{dt}\int_S\vec{D}\cdot d\vec{S}\\\oint_S\vec{D}\cdot d\vec{S}=Q_f\\\oint_S\cdot d\vec{S}=0\end{array}\right.$\\
+\textbf{边界处法向分量}$D_{2n}+D_{1n}=\sigma$,$B_{2n}=B_{1n}$\textbf{切向分量}$\vec{e}_n\times(\vec{H}_{2t}-\vec{H}_{1t})=\vec{\alpha}_f$其中$\alpha$--自由电流线密度$\vec{e}_n\times(\vec{E}_2-\vec{E}_1)=0$\\
+\textbf{能量守恒定律}$-\oint_S\vec{S}\cdot\vec{\sigma}=\int_V\vec{f}\cdot\vec{v}dV+\frac{d}{dt}\int_VwdV$ or $\nabla\cdot\vec{S}+\frac{\partial w}{\partial t}=-\vec{f}\cdot\vec{v}$其中$w$--能量密度$\vec{S}$--能流密度(坡印廷矢量)$\vec{f}$--场对电荷作用力密度$\vec{v}$--电荷运动速度\& $\frac{\partial w}{\partial t}=\vec{E}\cdot\frac{\partial\vec{D}}{\partial t}+\vec{H}\cdot\frac{\partial\vec{B}}{\partial t}$\textbf{真空中}$w=\frac{1}{2}(\epsilon_0E^2+\frac{1}{\mu_0}B^2)$\textbf{线性介质中}$w=\frac{1}{2}(\vec{E}\cdot\vec{D}+\vec{H}\cdot\vec{B})$
+\end{multicols}
+\begin{multicols}{2}
+\noindent\textbf{Chap2}\\
+\textbf{电势}$\vec{E}=-\nabla\phi$\\
+\textbf{泊松方程}(各向同性线性介质)$\nabla^2\phi=-\frac{\rho}{\epsilon}\\
+$\textbf{边界条件}$\phi_1=\phi_2$,$\epsilon_2\frac{\partial\phi_2}{\partial n}-\epsilon_1\frac{\partial\phi_1}{\partial n}=-\sigma$\\
+\textbf{线性介质中静电场总能量}$W=\frac{1}{2}\int_{\infty}\vec{E}\cdot\vec{D}dV=\frac{1}{2}\int_V\rho\phi dV=\frac{1}{8\pi\epsilon}\int dV\int dV'\frac{\rho(\vec{x}\rho(\vec{x}'))}{r}$\\
+\textbf{唯一性定理}设区域$V$内给定自由电荷分布$\rho(\vec{x})$,在$V$的边界$S$上给定(1)电势$\phi|_{S}$或(2)电势的法线方向偏导数$\frac{\partial\phi}{\partial n}|_S$,则$V$内的电场唯一地确定\textbf{有导体存在时的唯一性定理}设区域$V$内有一些导体,给定导体之外的电荷分布$\rho$,在$V$的边界$S$上给定(1)电势$\phi|_{S}$或(2)电势的法线方向偏导数$\frac{\partial\phi}{\partial n}|_S$并且给定(1)每个导体上的电势$\phi_i$或(2)每个导体上的总电荷,则$V$内的电场唯一地确定\\
+若区域$V$内部自由电荷密度$\rho=0$,泊松方程化为\textbf{拉普拉斯方程}$\nabla^2\phi=0$在直角坐标系中分离变量$\phi(x,y,z)=X(x)Y(y)Z(z)$从而有$\frac{1}{X}\frac{d^2X}{dx^2}+\frac{1}{Y}\frac{d^2Y}{dy^2}+\frac{1}{Z}\frac{d^2Z}{dz^2}=0$设$\frac{1}{X}\frac{d^2X}{dx^2}=-\alpha^2$,$\frac{1}{Y}\frac{d^2Y}{dy^2}=-\beta^2$,$\frac{1}{Z}\frac{d^2Z}{dz^2}=\gamma^2$其中$\gamma^2=\alpha^2+\beta^2$通解为$X(x)=Re(A_{\alpha}e^{i\alpha x}+B_{\alpha}e^{-i\alpha x})$,$Y(y)=Re(A_{\beta}e^{i\beta y}+B_{\beta}e^{-i\beta y})$,$Z(z)=Re(A_{\gamma}e^{i\gamma z}+B_{\gamma}e^{-i\gamma z})$,$\phi(x,y,z)=Re[(A_{\alpha}e^{i\alpha x}+B_{\alpha}e^{-i\alpha x})(A_{\beta}e^{i\beta y}+B_{\beta}e^{-i\beta y})(A_{\gamma}e^{i\gamma z}+B_{\gamma}e^{-i\gamma z})]$,$\phi(x,y,z)=\sum_{l,m,n}(C_{xl}\cos\alpha_lx+D_{xl}\sin\alpha_lx)\cdot(C_{ym}\cos\beta_my+D_{ym}\sin\beta_my)\cdot(C_{zn}\cos\gamma_nz+D_{zn}\sin\gamma_nz)$在柱坐标系中的通解$\phi(r,\theta)=\sum_{n=1}^{\infty}[r^n(A_n\cos n\theta+B_n\sin n\theta)+r^{-n}(C_n\cos n\theta+D_n\sin n\theta)]$若轴对称,则$\phi(r)=A+B\ln r$在球坐标系中的通解$\phi(R,\theta,\phi)=\sum_{n,m}(a_{nm}R^n+\frac{b_nm}{R^{n+1}})P_n^m(\cos\theta)\cos m\phi+\sum_{n,m}(c_{nm}R^n+\frac{d_{nm}}{R^{n+1}})P_n^m(\cos\theta)\sin m\phi$若有对称轴且以之为极轴,则$\phi=\sum_n(a_nR^n+\frac{b_n}{R^{n+1}})P_n(\cos\theta)$\\
+接地无限大平面导体板附近有一点电荷$Q$,镜像电荷$Q'=-Q$位于点电荷关于导体板对称的位置,电势$\phi=\frac{1}{4\pi\epsilon_0}(\frac{Q}{r}-\frac{Q}{r'})=\frac{1}{4\pi\epsilon_0}[\frac{Q}{\sqrt{x^2+y^2+(z-a)^2}}-\frac{Q}{\sqrt{x^2+y^2+(z+a)^2}}]$;真空中有一半径为$R_0$的接地导体球,距球心为$a(>R_0)$处有一点电荷$Q$,镜像电荷$Q'=-\frac{R_0}{a}Q$位于距球心$b=\frac{R_0^2}{a}$处\\
+\textbf{格林函数}$G(\vec{x},\vec{x}')$满足$\nabla^2G(\vec{x},\vec{x}')=-\frac{1}{epsilon_0}\delta(\vec{x}-\vec{x}')$并在包含$\vec{x}'$的某空间区域$V$的边界$S$上满足\textbf{第一类边界条件}$G|_S=0$或\textbf{第二类边界条件}$\frac{\partial G}{\partial n}|_S=\frac{1}{\epsilon_0S}$\textbf{无界空间的格林函数}$G(\vec{x},\vec{x}')=\frac{1}{4\pi\epsilon_0}\frac{1}{\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}}$\textbf{上半空间的格林函数}(满足第一类边界条件)$G(\vec{x}\vec{x}')=\frac{1}{4\pi\epsilon_0}[\frac{1}{\sqrt{(x-x')^2+(y-y')^2+(z-z')^2}}-\frac{1}{\sqrt{(x-x')^2+(y-y')^2+(z+z')^2}}]$\textbf{接地导体球外空间的格林函数}$G(\vec{x},\vec{x}')=\frac{1}{4\pi\epsilon_0}[\frac{1}{\sqrt{R^2+R'^2-2RR'\cos\alpha}}-\frac{1}{\sqrt{(\frac{RR'}{R_0})^2+R_0^2+2RR'\cos\alpha}}]$\textbf{第一类边值问题}$\phi(\vec{x})=\int_VG(\vec{x}',\vec{x})\rho(\vec{x}')dV'-\epsilon_0\oint_S\phi(\vec{x}')\frac{\partial}{\partial n'}G(\vec{x}',\vec{x})dS'$\textbf{第二类边值问题}$\phi(\vec{x})=\int_VG(\vec{x}',\vec{x})\rho(\vec{x}')dV'+\epsilon_0\oint_SG(\vec{x}',\vec{x})\frac{\partial\phi(x')}{\partial n'}dS'+<\phi>_S$其中$<\phi>_S$--电势在界面$S$上的平均值\\
+\textbf{电荷体系电势多级展开式}$\phi(\vec{x})=\frac{1}{4\pi\epsilon_0}\int_V\rho(\vec{x}')[\frac{1}{R}-\vec{x}'\cdot\nabla\frac{1}{R}+\frac{1}{2!}\sum_{i,j}x_i'x_j'\frac{\partial^2}{\partial x_i\partial x_j}\frac{1}{R}+\cdots]=\frac{1}{4\pi\epsilon_0}(\frac{Q}{R}-\vec{p}\cdot\nabla\frac{1}{R}+\frac{1}{6}\sum_{i,j}\frac{\partial^2}{\partial x_i\partial x_j}\frac{1}{R}+\cdots)$,其中$R=\sqrt{x^2+y^2+z^2}$,$Q=\int_V\rho(\vec{x}')dV'$,电偶极矩$\vec{p}=\int_V\rho(\vec{x}')\vec{x}'dV'$,电四极矩$\mathscr{D}=\int_V3x_i'x_j'\rho(\vec{x}')dV'$\\
+具有电荷分布$\rho(\vec{x})$的体系在电势为$\phi_e$的外电场中能量$W=\int\rho\phi_edV=\int\rho(\vec{x})[\phi_e(0)+\sum_ix_i\frac{\partial}{\partial x_i}\phi_e(0)+\frac{1}{2!}\sum_{i,j}x_ix_j\frac{\partial^2}{\partial x_i\partial x_j}\phi_e(0)+\cdots]dV=Q\phi_e(0)+\sum_ip_i\frac{\partial}{\partial x_i}\phi_e(0)+\frac{1}{6}\sum_{i,j}\mathscr{D}_{ij}\frac{\partial^2}{\partial x_i\partial x_j}\phi_e(0)+\cdots$电偶极子在外场中受力$\vec{F}=\nabla(\vec{p}\cdot\vec{E}_e)=\vec{p}\cdot\nabla\vec{E}_e$受力矩$L_{\theta}=-\frac{\partial(\vec{p}\cdot\vec{E}_e)}{\partial\theta}=-pE_e\sin\theta$ so $\vec{L}=\vec{p}\times\vec{E}_e$
+\end{multicols}
+\begin{multicols}{2}
+\textbf{Chap3}\\
+def\textbf{矢势}$\vec{B}=\nabla\times\vec{A}$ so $\int_S\vec{B}\cdot d\vec{S}=\oint_L\vec{A}\cdot d\vec{l}$当满足库伦规范$\nabla\cdot\vec{A}=0$时$\nabla^2\vec{A}=-\mu_0\vec{J}$其解为$\vec{A}(\vec{x})=\frac{\mu_0}{4\pi}\int_V\frac{\vec{J}(\vec{x}')}{r}dV'$\\
+\textbf{边界条件}$\vec{e}_n\times(\frac{1}{\mu_2}\nabla\times\vec{A}_2-\frac{1}{\mu_1}\nabla\times\vec{A}_1)$\textbf{介质分界面上矢势连续}$\vec{A}_2=\vec{A}_1$\\
+\textbf{磁场总能量}$W=\int_{\infty}\vec{B}\cdot\vec{H}dV=\int_V\vec{A}\cdot\vec{J}dV$前一积分遍及磁场分布区域,后一积分遍布电流分布区域,电流$\vec{J}$在外场$\vec{A}_e$中的相互作用能量$W_i=\int_V\vec{J}\cdot\vec{A}_edV$\\
+在$\vec{J}_f=0$的单连通区域内def\textbf{磁标势}$\vec{H}=-\nabla\phi_m$def\textbf{假想磁荷密度}$\rho_m=-\mu_0\nabla\cdot\vec{M}$ so $\nabla^2\phi_m=-\frac{\rho_m}{\mu_0}$\\
+\textbf{边界条件}$\vec{e}_n\times(-\nabla\phi_2+\nabla\phi_1)=\alpha_f$,$B_{2n}=B_{1n}$若介质线性均匀,且界面上$\alpha_f=0$,则$\phi_2=\phi_1$,$\mu_2\frac{\partial\phi_2}{\partial n}=\mu_1\frac{\partial\phi_1}{\partial n}$
+在磁标势法中,静电场--静磁场\\
+$\nabla\times\vec{E}=0$--$\nabla\times\vec{H}=0$\\
+$\nabla\cdot\vec{E}=\frac{(\rho_f+\rho_P)}{\epsilon_0}$--$\nabla\cdot\vec{H}=\frac{\rho_m}{\mu_0}$\\
+$\rho_P=-\nabla\cdot\vec{P}$--$\rho_m=-\mu_0\nabla\cdot\vec{M}$\\
+$\vec{D}=\epsilon_0\vec{E}+\vec{P}$--$\vec{B}=\mu_0\vec{H}+\mu_0\vec{M}$\\
+$\vec{E}=-\nabla\phi$--$\vec{H}=-\nabla\phi_m$\\
+$\nabla^2\phi=-\frac{(\rho_f+\rho_P)}{\epsilon_0}$--$\nabla^2\phi_m=-\frac{\rho_m}{\mu_0}$\\
+\textbf{磁矢势多级展开}$\vec{A}(\vec{x})=\frac{\mu_0}{4\pi}\int_V\vec{J}(\vec{x}')[\frac{1}{R}-\vec{x}'\cdot\nabla\frac{1}{R}+\frac{1}{2!}\sum_{i,j}x_i'x_j'\frac{\partial^2}{\partial x_i\partial x_j}\frac{1}{R}+\cdots]dV'$其中$\vec{A}^{(0)}=0$,$\vec{A}^{(1)}=-\frac{\mu_0I}{4\pi}\frac{\vec{m}\times\vec{R}}{R^3}$\textbf{磁矩}$\vec{m}=\frac{1}{2}\int_V\vec{x}'\times\vec{J}(\vec{x}')dV'$对于闭合环路$\vec{m}=I\Delta\vec{S}$\\
+\textbf{磁偶极矩的磁场和磁矩}$\vec{B}^{(1)}=-\mu_0\nabla\phi_m^{(1)}$,$\phi_m^{(1)}=\frac{\vec{m}\cdot\vec{R}}{4\pi R^3}$\text{在外场中的势能}$U=-\vec{m}\cdot\vec{B}_e$\text{受力}$\vec{F}=-\nabla U=\vec{m}\cdot\nabla\vec{B}_e$\text{受力矩}$L=-\frac{\partial}{\partial\theta}U=-mB_e\sin\theta$ so $\vec{L}=\vec{m}\times\vec{B}_e$
+\end{multicols}
+\noindent\textbf{矢量微分/哈密顿算子}$\nabla=\frac{\partial}{\partial x}\bm{i}+\frac{\partial}{\partial y}\bm{j}+\frac{\partial}{\partial z}\bm{k}$;\textbf{梯度}$\nabla u=\frac{\partial u}{\partial x}\bm{i}+\frac{\partial u}{\partial y}\bm{j}+\frac{\partial u}{\partial z}\bm{k}$;\textbf{散度}$\nabla\cdot\bm{E}=\frac{\partial E_x}{\partial x}+\frac{\partial E_y}{\partial y}+\frac{\partial E_z}{\partial z}$;\textbf{旋度}$\nabla\times\bm{E}=[\bm{i}~\bm{j}~\bm{k};\frac{\partial}{\partial x}~\frac{\partial}{\partial y}~\frac{\partial}{\partial z};E_x~E_y~E_x]=(\frac{\partial E_z}{\partial y}-\frac{\partial E_y}{\partial z})\bm{i}+(\frac{\partial E_x}{\partial z}-\frac{\partial E_z}{\partial x})\bm{j}+(\frac{\partial E_y}{\partial x}-\frac{\partial E_x}{\partial y})\bm{k}$;\textbf{拉普拉斯算子}$\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$,作用于函数$\nabla^u=\nabla\cdot(\nabla u)=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+{\partial^2u}{\partial z^2}$,作用于矢量$\nabla^2\bm{E}=(\nabla^2E_x)\bm{i}+(\nabla^2E_y)\bm{j}+{\partial^2u}{\partial z^2}\bm{k}$;\\
+标量场的梯度无旋$\nabla\times\nabla\phi=0$,矢量场的旋度无源$\nabla\times\nabla\times\bm{f}=0$;\\
+$\nabla(\phi\psi)=\phi\nabla\psi+\psi\nabla\phi$\\
+$\nabla\cdot(\phi\bm{f})=(\nabla\phi)\cdot\bm{f}+\phi\nabla\cdot\bm{f}$\\
+$\nabla\times(\phi\bm{f})=(\nabla\phi)\times\bm{f}+\phi\nabla\times\bm{f}$\\
+$\nabla\cdot(\bm{f}\times\bm{g})=(\nabla\times\bm{f})\cdot\bm{g}-\bm{f}\cdot(\nabla\times\bm{g})$\\
+$\nabla\times(\bm{f}\times\bm{g})=(\bm{g}\cdot\nabla)\bm{f}+(\nabla\cdot\bm{g})\bm{f}-(\bm{f}\cdot\nabla)\bm{g}-(\nabla\cdot\bm{f})\bm{g}$,$\nabla(\bm{f}\cdot\bm{g})=\bm{f}\times(\nabla\times\bm{g})+(\bm{f}\cdot\nabla)\bm{g}+\bm{g}\times(\nabla\times\bm{f})+(\bm{g}\cdot\nabla)\bm{f}$,$\nabla\times(\nabla\times\bm{f})=\nabla(\nabla\cdot\bm{f})-\nabla^2\bm{f}$\\
+$\bm{a}\times(\bm{b}\times\bm{c})=\bm{b}(\bm{a}\cdot\bm{c})-\bm{c}(\bm{a}\cdot\bm{b})$\\
+\textbf{高斯定理}$\iint_{\partial V}\bm{E}\cdot d\bm{S}=\iiint\nabla\cdot\bm{E}dV$\\
+\textbf{格林定理}$\nabla\cdot(u\nabla v)=u\nabla\cdot\nabla v+(\nabla u)\cdot(\nabla v)$\\
+\textbf{斯多克斯定理}$\oint_{\partial S}\bm{E}\cdot d\bm{l}=\iint_S(\nabla\times\bm{E})\cdot d\bm{S}$
+
+\begin{table}[h]
+\centering\footnotesize
+\caption{坐标变换}
+\begin{tabular}{|c|c|c|c|}\hline
+& 直角坐标系 & 柱坐标系 & 球坐标系\\\hline
+直角 & & $x=\rho\cos\phi,y=\rho\sin\phi,z$ & $x=r\sin\theta\cos\phi,y=r\sin\theta\sin\phi,z=r\cos\theta$\\\hline
+柱 & $\rho=\sqrt{x^2+y^2},\phi=\arctan(y/x),z=z$ & & $\rho=r\sin\theta,\phi,z=r\cos\theta$\\\hline
+球 & $r=\sqrt{x^2+y^2+z^2},\theta=\arccos(z/r),\phi=\arctan(y/x)$ & $r=\sqrt{\rho^2+z^2},\theta=\arctan(\rho/z),\phi$ &\\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering\footnotesize
+\caption{梯度、散度、旋度和拉普拉斯算子变换}
+\begin{tabular}{|c|c|c|c|}\hline
+& 直角坐标系 & 柱坐标系 & 球坐标系\\\hline
+矢量$\bm{A}$ & $A_x\hat{x}+A_y\hat{y}+A_z\hat{z}$ & $A_{\rho}\hat{\rho}+A_{\phi}\hat{\phi}+A_z\hat{z}$ & $A_{r}\hat{r}+A_{\theta}\hat{\theta}+A_{\phi}\hat{\phi}$\\\hline
+梯度$\nabla f$ & $\frac{\partial f}{\partial x}\hat{x}+\frac{\partial f}{\partial y}\hat{y}+\frac{\partial f}{\partial z}\hat{z}$ & $\frac{\partial f}{\partial\rho}\hat{\rho}+\frac{1}{\rho}\frac{\partial f}{\partial\phi}\hat{\phi}+\frac{\partial f}{\partial z}\hat{z}$ & $\frac{\partial f}{\partial r}\hat{r}+\frac{1}{r}\frac{\partial f}{\partial\theta}\hat{\theta}+\frac{1}{r\sin\theta}\frac{\partial f}{\partial\phi}\hat{\phi}$\\\hline
+散度$\nabla\cdot\bm{A}$ & $\frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z}$ & $\frac{1}{\rho}\frac{\partial(\rho A_{\rho})}{\partial\rho}+\frac{1}{\rho}\frac{\partial A_{\phi}}{\partial\phi}+\frac{\partial A_z}{\partial z}$ & $\frac{1}{r^2}\frac{\partial(r^2A_r)}{\partial r}+\frac{1}{r\sin\theta}\frac{\partial(A_{\theta}\sin\theta)}{\partial\theta}+\frac{1}{r\sin\theta}\frac{\partial A_{\phi}}{\partial\phi}$\\\hline
+旋度$\nabla\times\bm{A}$ & $\begin{array}{l}(\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z})\hat{x}+(\frac{\partial A_x}{\partial z}-\frac{\partial A_z}{\partial x})\hat{y}\\+(\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y})\hat{z}\end{array}$ & $\begin{array}{l}(\frac{1}{\rho}\frac{\partial A_z}{\partial\phi}-\frac{\partial A_{\phi}}{\partial z})\hat{\rho}+(\frac{\partial A_{\rho}}{\partial z}-\frac{\partial A_z}{\partial\rho})\hat{\phi}\\+\frac{1}{\rho}(\frac{\partial(\rho A_{\phi})}{\partial\rho}-\frac{\partial A_{\rho}}{\partial\phi})\hat{z}\end{array}$ & $\begin{array}{l}\frac{1}{r\sin\theta}(\frac{\partial(A_{\phi}\sin\theta)}{\partial\theta}-\frac{\partial A_{\theta}}{\partial\phi})\hat{r}+\frac{1}{r}(\frac{1}{\sin\theta}\frac{\partial A_r}{\partial\phi}-\frac{\partial(rA_{\phi})}{\partial r})\hat{\theta}\\+\frac{1}{r}(\frac{\partial(rA_{\theta})}{\partial r}-\frac{\partial A_r}{\partial\theta})\hat{\phi}\end{array}$\\\hline
+拉普拉斯算子$\nabla^2$ & $\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$ & $\frac{\partial^2}{\partial\rho^2}+\frac{1}{\rho}\frac{\partial}{\partial\rho}+\frac{1}{\rho^2}\frac{\partial^2}{\partial\phi^2}+\frac{\partial^2}{\partial z^2}$ & $\frac{1}{r^2}\frac{\partial}{\partial r}(r^2\frac{\partial}{\partial r})+\frac{1}{r^2\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial}{\partial\theta})+\frac{1}{r^2\sin\theta^2\theta}\frac{\partial^2}{\partial\phi^2}$\\\hline
+\end{tabular}
+\end{table}
+\end{document}

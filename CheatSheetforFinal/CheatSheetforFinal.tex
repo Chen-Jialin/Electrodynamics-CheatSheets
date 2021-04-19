@@ -1,0 +1,278 @@
+% Electrodynamics CheatSheet for Final
+\documentclass[10pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{multicol}
+\geometry{left=.4cm,right=.4cm,top=.2cm,bottom=.2cm}
+\setlength{\columnseprule}{1pt}
+\begin{document}
+\scriptsize
+\begin{multicols}{2}
+\noindent\textbf{Chap1电磁现象的普遍规律}\\
+\textbf{库仑定律}$\bm{F}=Q'\bm{E}=\frac{QQ'\hat{r}}{4\pi\varepsilon_0r^2}$~~~~~~~~\textbf{电场叠加性}$\bm{E}=\sum_{i=1}^n\frac{Q_i\hat{r}_i}{4\pi\varepsilon_0r_i^2}=\int_V\frac{\rho(\bm{x}')\bm{r}dV'}{4\pi\varepsilon_0r^3}$\\
+\textbf{高斯定理\&电场散度}$\oint_S\bm{E}\cdot d\bm{S}=\frac{1}{\varepsilon_0}\sum_iQ_i=\frac{1}{\varepsilon_0}\int_V\rho dV$ 或 $\nabla\cdot\bm{E}=\frac{\rho}{\varepsilon_0}$\\
+\textbf{静电场旋度}$\nabla\times\bm{E}=0$~~~~~~~~\textbf{电荷守恒定律}$\oint_S\bm{J}\cdot d\bm{S}=-\int_V\frac{\partial\rho}{\partial t}dV$ 或 $\nabla\cdot\bm{J}+\frac{\partial\rho}{\partial t}=0$\\
+\textbf{毕奥-萨伐尔定律}$\bm{B}(\bm{x})=\frac{\mu_0}{4\pi}\int_V\frac{\bm{J}(\bm{x}')\times \bm{r}}{r^3}dV'=\frac{\mu_0}{4\pi}\oint_L\frac{Id\bm{l}\times\bm{r}}{r^3}$\\
+\textbf{磁场环量\&旋度}$\oint_L\bm{B}\cdot d\bm{l}=\mu_0I=\mu_0\int_S\bm{J}\cdot d\bm{S}$ 或 $\nabla\times\bm{B}=\mu_0\bm{J}$\\
+\textbf{电磁感应定律}$\mathscr{E}=\oint_L\bm{E}\cdot d\bm{l}=-\frac{d}{dt}\int_S\bm{B}\cdot d\bm{S}$ 或 $\nabla\times\bm{E}=-\frac{\partial B}{\partial t}$\\
+\textbf{位移电流}$\bm{J}_D=\varepsilon\frac{\partial\bm{E}}{\partial t}\Rightarrow\nabla\times\bm{B}=\mu(\bm{J}+\bm{J}_D)$\\
+\textbf{介质的极化~电极化强度矢量}$\bm{P}=\frac{\sum_i\bm{p_i}}{\Delta V}$~~~~~~~~其中\textbf{电偶极矩}$\bm{p}=q\bm{l},\bm{l}$由负指向正电荷\\
+\indent\textbf{束缚电荷密度}$\int_V\rho_PdV=-\oint_S\bm{P}\cdot d\bm{S}$ 或 $\rho_P=-\nabla\cdot\bm{P}\\
+\indent$\textbf{介质分界面束缚电荷面密度}$\sigma_P=-\bm{e}_n\cdot(\bm{P}_2-\bm{P}_1)$~~~~~~~~其中$\bm{e}_n$由介质$1$指向$2$\\
+\indent\textbf{高斯定理}$\varepsilon_0\nabla\cdot\bm{E}=\rho_f+\rho_P\Rightarrow\nabla\cdot(\varepsilon_0\bm{E}+\bm{P})=\rho_f$\\
+\indent\textbf{电位移矢量}$\bm{D}=\varepsilon_0\bm{E}+\bm{P}$ 故 $\nabla\bm{D}=\rho_f$\\
+\indent对各向同性线性介质$P=\chi_e\varepsilon_0\bm{E}$ 故 $\bm{D}=\varepsilon\bm{E}$\\
+\indent\indent其中$\chi_e$--极化率，$\varepsilon=\varepsilon_r\varepsilon_0$--电容率，$\varepsilon_r=1+\chi_e$--相对电容率\\
+\indent\tiny对各向异性介质$D_i=\sum_{j=1}^3\varepsilon_{ij}E_{j}$\scriptsize\\
+\indent\tiny强场下介质非线性$D_i=\sum_{j}\varepsilon_{ij}E_j+\sum_{j,k}\varepsilon_{ijk}E_jE_k+\sum_{jkl}\varepsilon_{ijkl}E_jE_kE_l+\cdots$\scriptsize\\
+\textbf{介质的磁化~分子电流磁矩}$\bm{m}=i\bm{a}$~~~~~~~~其中$i$--分子电流，$\bm{a}$--分子电流环绕面积\\
+\indent\textbf{磁化强度}$\bm{M}=\frac{\sum_i\bm{m}_i}{\Delta V}$~~~~~~~~\textbf{磁化电流}$I_M=\oint_L\bm{M}\cdot d\bm{l}$~~~~~~~~\textbf{磁化电流密度}$\bm{J}_M=\nabla\times\bm{M}$\\
+\indent\tiny当电场变化时,介质的极化强度矢量$\bm{P}=\frac{\sum_ie_i\bm{x}_i}{\Delta V}$($\Delta V$中各带电粒子位置为$\bm{x}_i$，电荷为$e_i$)变化，产生极化电流密度$\bm{J}_P=\frac{\partial\bm{P}}{\partial t}=\frac{\sum_ie_i\bm{v}_i}{\Delta V}$，此时\textbf{磁场旋度}$\frac{1}{\mu_0}\nabla\times\bm{B}=\bm{J}_f+\bm{J}_M+\bm{J}_P+\varepsilon_0\frac{\partial E}{\partial t}$ 或 \scriptsize$\nabla\times(\frac{\bm{B}}{\mu_0}-\bm{M})=\bm{J}_f+\frac{\partial\bm{D}}{\partial t}$\\
+\indent定义\textbf{磁场强度}$\bm{H}=\frac{\bm{B}}{\mu_0}-\bm{M}$ 从而有$\nabla\times\bm{H}=\bm{J}_f+\frac{\partial\bm{D}}{\partial t}$\\
+\indent对各向同性非铁磁物质$\bm{M}=\chi_M\bm{H}\Rightarrow\bm{B}=\mu\bm{H}$\\
+\indent\indent其中$\chi_M$--磁化率，$\mu=\mu_r\mu_0$--磁导率，相对磁导率$\mu_r=1+\chi_M$\\
+\indent\tiny对铁磁性物质，$\bm{B}$与$\bm{H}$的关系依赖于磁化过程，常用磁化曲线和磁滞回线表示\scriptsize\\
+\textbf{麦克斯韦方程组}$\left\{\begin{array}{l}\nabla\times\bm{E}=-\frac{\partial\bm{B}}{\partial t}\\\nabla\times\bm{H}=\bm{J}+\frac{\partial\bm{D}}{\partial t}\\\nabla\cdot\bm{D}=\rho\\\nabla\cdot\bm{B}=0\end{array}\right.$(积分形式)$\left\{\begin{array}{l}\oint_L\bm{E}\cdot d\bm{l}=-\frac{d}{dt}\int_S\bm{B}\cdot d\bm{S}\\\oint_L\bm{H}\cdot d\bm{l}=I_f+\frac{d}{dt}\int_S\bm{D}\cdot d\bm{S}\\\oint_S\bm{D}\cdot d\bm{S}=Q_f\\\oint_S\cdot d\bm{S}=0\end{array}\right.$\\
+\textbf{洛伦兹力密度}$\bm{f}=\rho\bm{E}+\bm{J}\times\bm{B}$~~~~\textbf{点电荷受洛伦兹力}$\bm{F}=q\bm{E}+q\bm{v}\times\bm{B}$~~~~\textbf{欧姆定律}$J=\sigma\bm{E}$\\
+\textbf{边值关系}$\left\{\begin{array}{ll}\bm{e}_n\cdot(D_2+D_1=\sigma_f&\bm{e}_n\times(\bm{E}_2-\bm{E}_1)=0\\\bm{e}_n\cdot(\bm{B}_2-\bm{B}_1)=0&\bm{e}_n\times(\bm{H}_2-\bm{H}_1)=\bm{\alpha}_f\\\bm{e}_n\cdot(\bm{P}_2-\bm{P}_1)=-\sigma_P&\bm{e}_n\times(\bm{M}_2-\bm{M}_1)=\bm{\alpha}_M\\\bm{e}_n\cdot(\bm{J}_2-\bm{J}_1)=-\frac{\partial\sigma}{\partial t}\end{array}\right.$\\
+\indent其中$\sigma=\sigma_f+\sigma_P$，$\alpha$--自由电流面密度，$\bm{\alpha}_M$--磁化电流面密度\\
+\textbf{能量守恒定律}$-\oint_S\bm{S}\cdot d\bm{\sigma}=\int_V\bm{f}\cdot\bm{v}dV+\frac{d}{dt}\int_VwdV$ 或 $-\nabla\cdot\bm{S}=\frac{\partial w}{\partial t}+\bm{f}\cdot\bm{v}$\\
+\indent其中$w$--能量密度~~~~$\bm{S}$--能流密度(坡印廷矢量)~~~~$\bm{f}$--场对电荷作用力密度~~~~$\bm{v}$--电荷速度\\
+\indent\textbf{能流密度}$\bm{S}=\bm{E}\times\bm{H}$~~~~~~~~\textbf{能量密度变化率}$\frac{\partial w}{\partial t}=\bm{E}\cdot\frac{\partial\bm{D}}{\partial t}+\bm{H}\cdot\frac{\partial\bm{B}}{\partial t}$\\
+\indent\indent\textbf{真空中}$\bm{S}=\frac{1}{\mu_0}\bm{E}\times\bm{B},w=\frac{1}{2}(\varepsilon_0E^2+\frac{1}{\mu_0}B^2)$\\
+\tiny\indent\indent\textbf{线性介质中}(包含极化能和磁化能，不计介质热损耗)$w=\frac{1}{2}(\bm{E}\cdot\bm{D}+\bm{H}\cdot\bm{B})$\scriptsize
+\end{multicols}
+
+\begin{multicols}{2}
+\noindent\textbf{Chap2静电场}\\
+定义\textbf{电势}$\bm{E}=-\nabla\varphi$\\
+\textbf{点电荷在距离$r$处的电势}$\varphi=\frac{Q}{4\pi\varepsilon_0r}$~~~~~~~~\textbf{电势叠加}$\varphi=\sum_i\frac{Q}{4\pi\varepsilon_or_i}=\int_V\frac{\rho(\bm{x}')dV'}{4\pi\varepsilon_0r}$\\
+\textbf{泊松方程}\tiny(均匀各向同性线性介质)\scriptsize$\nabla^2\varphi=-\frac{\rho}{\varepsilon}$~~~~\textbf{边值关系}$\varphi_1=\varphi_2,\varepsilon_2\frac{\partial\varphi_2}{\partial n}-\varepsilon_1\frac{\partial\varphi_1}{\partial n}=-\sigma_f$\\
+\tiny\textbf{唯一性定理}~区域$V$内给定自由电荷分布$\rho(\bm{x})$，$V$的边界$S$上给定 1. 电势$\varphi|_{S}$ 或 2. 电势的法线方向偏导数$\frac{\partial\varphi}{\partial n}|_S$，则$V$内电场唯一地确定~~~~~~~~\textbf{有导体存在时的唯一性定理}~区域$V$内有一些导体，给定去除导体后的区域$V'$内的电荷密度$\rho$，给定各导体上电势$\varphi_i$或各导体上总电荷$Q_i$，且给定$V$的外边界$S$上的$\varphi_S$或$\frac{\partial\varphi}{\partial n}|_S$，则$V'$内电场唯一地确定\\
+若区域$V$内无自由电荷$\rho=0$，泊松方程化为\textbf{拉普拉斯方程}$\nabla^2\varphi=0$\\
+\textbf{分离变量法}~直角坐标系$\varphi(x,y,z)=X(x)Y(y)Z(z)\Rightarrow\frac{1}{X}\frac{d^2X}{dx^2}+\frac{1}{Y}\frac{d^2Y}{dy^2}=-\frac{1}{Z}\frac{d^2Z}{dz^2}$\\
+\indent设$\frac{1}{X}\frac{d^2X}{dx^2}=-\alpha^2,\frac{1}{Y}\frac{d^2Y}{dy^2}=-\beta^2,\frac{1}{Z}\frac{d^2Z}{dz^2}=\gamma^2$~~~~其中$\gamma^2=\alpha^2+\beta^2$~~~~通解为$X(x)=\text{Re}(A_{\alpha}$\\
+\indent$e^{i\alpha x}+B_{\alpha}e^{-i\alpha x}),Y(y)=\text{Re}(A_{\beta}e^{i\beta y}+B_{\beta}e^{-i\beta y}),Z(z)=\text{Re}(A_{\gamma}e^{i\gamma z}+B_{\gamma}e^{-i\gamma z})$\\
+柱坐标系~通解为$\varphi(r,\theta)=\sum_{n=1}^{\infty}[r^n(A_n\cos n\theta+B_n\sin n\theta)+r^{-n}(C_n\cos n\theta+D_n\sin n\theta)]$\\
+\indent若轴对称，则为$\varphi(r)=A+B\ln r$\\
+球坐标系~通解为$\varphi(R,\theta,\varphi)=\sum_{n,m}(a_{nm}R^n+\frac{b_nm}{R^{n+1}})P_n^m(\cos\theta)\cos m\varphi+\sum_{n,m}(c_{nm}R^n+\frac{d_{nm}}{R^{n+1}})P_n^m(\cos\theta)\sin m\varphi$~~~~~~~~若有对称轴且以之为极轴，则$\varphi=\sum_n(a_nR^n+\frac{b_n}{R^{n+1}})P_n(\cos\theta)$\\
+\indent其中低阶勒氏多项式：~~~~~~~~~~~~~~~~低阶连带勒氏多项式：\\
+$\left\{\begin{array}{l}P_0(x)=1\\P_1(x)=x\\P_2(x)=\frac{1}{2}(3x^2-1)\\P_3(x)=\frac{1}{2}(5x^3-3x)\\P_4(x)=\frac{1}{8}(35x^4\\-30x^2+3)\\P_5(x)=\frac{1}{8}(63x^5\\-70x^3+15x)\end{array}\right.\left\{\begin{array}{ll}P_l^0(x)=P_l(x)\\P_1^1(x)=\sqrt{1-x^2}&P_1^{-1}(x)=-\frac{1}{2}\sqrt{1-x^2}\\P_2^1(x)=3x\sqrt{1-x^2}&P_2^{-1}(x)=-\frac{1}{2}x\sqrt{1-x^2}\\P_2^2(x)=3(1-x^2)&P_2^{-2}(x)=\frac{1}{8}(1-x^2)\\P_3^1(x)=\frac{3}{2}(1-x^2)^{\frac{1}{2}}(5x^2-1)&P_3^{-1}(x)=-\frac{1}{12}P_3^1(x)\\P_3^2(x)=15(1-x^2)x&P_3^{-2}(x)=\frac{1}{8}(1-x^2)x\\P_3^3(x)=15(1-x^2)^{\frac{3}{2}}&P_3^{-3}(x)=-\frac{1}{48}(1-x^2)^{\frac{3}{2}}\end{array}\right.$\\
+接地无限大平面导体板附近有一点电荷$Q$，镜像电荷$Q'=-Q$位于点电荷关于导体板对称的位置，电势$\varphi=\frac{1}{4\pi\varepsilon_0}(\frac{Q}{r}-\frac{Q}{r'})=\frac{1}{4\pi\varepsilon_0}[Q/\sqrt{x^2+y^2+(z-a)^2}-Q/\sqrt{x^2+y^2+(z+a)^2}]$\\
+真空中一半径为$R_0$的接地导体球，距球心$a(>R_0)$处有一点电荷$Q$，镜像电荷$Q'=-\frac{R_0}{a}Q$位于距球心$b=\frac{R_0^2}{a}$处\\
+\textbf{格林函数法}~给定区域$V$内电荷密度$\rho(\bm{x}')$和边界条件，泊松方程的解为\\
+\indent$\varphi(\bm{x})=\int_VG(\bm{x}',\bm{x})dV'+\varepsilon_0\oint_S[G(\bm{x}',\bm{x})\frac{\partial\varphi}{\partial n'}-\varphi(\bm{x}')\frac{\partial G(\bm{x}',\bm{x})}{\partial n'}]dS'$\\
+\indent其中格林函数$G(\bm{x}',\bm{x})$是该问题边界条件下格林方程$\nabla^2G(\bm{x}',\bm{x})=-\frac{\delta(\bm{x}-\bm{x}')}{\varepsilon_0}$的解\\
+\indent第$1$类边界条件$G(\bm{x}',\bm{x})|_{\bm{x}'\in S}=0$下\\
+\indent\indent$\varphi(\bm{x})=\int_VG(\bm{x}',\bm{x})\rho(\bm{x}')dV'-\varepsilon_0\oint_S[\varphi(\bm{x}')\frac{\partial G(\bm{x}',\bm{x})}{\partial n'}]dS'$\\
+\indent第$2$类边界条件$\frac{\partial G(\bm{x}',\bm{x})}{\partial n'}|_{\bm{x}'\in S}=-\frac{1}{\varepsilon_0S}$下，$\varphi(\bm{x})=\int_VG(\bm{x}',\bm{x})\rho(\bm{x}')dV'$\\
+\indent\indent$+\varepsilon_0\oint_SG(\bm{x}',\bm{x})\frac{\partial\varphi}{\partial n'}dS'+<\varphi>_S$~~~~其中$<\varphi>_S$为界面电势平均值\scriptsize\\
+\textbf{电荷体系电势多级展开式}$\varphi(\bm{x})=\frac{1}{4\pi\varepsilon_0}[\frac{q}{R}+\frac{\bm{p}\cdot\bm{R}}{R^3}+\frac{1}{6}\sum_{i,j=1}^3\mathcal{D}\frac{\partial^2}{\partial x_i\partial x_j}\frac{1}{R}+\cdots]$\\
+\indent其中\textbf{电单极矩}$q=\int_V\rho(\bm{x}')dV'$，\textbf{电偶极矩}$\bm{p}=\int_V\rho(\bm{x}')\bm{x}'dV'$\\
+\indent\indent\textbf{电四极矩}$\mathcal{D}_{ij}=\int_V3x_i'x_j'\rho(\bm{x}')dV'$\\
+\indent产生电势分别为$\varphi^{(0)}(\bm{x})=\frac{q}{4\pi\varepsilon_0R},\varphi^{(1)}=\frac{\bm{p}\cdot\bm{R}}{4\pi\varepsilon_0R^3},\varphi^{(2)}(\bm{x})=$\\
+\indent\indent$\frac{1}{24\pi\varepsilon_0}\sum_{i,j=1}^3\mathcal{D}_{ij}\frac{\partial^2}{\partial x_i\partial x_j}\frac{1}{R}$~~~~当电荷分布中心对称，$\bm{p}=0$；当反对称，$\mathcal{D}=0$\\
+\textbf{静电场总能量}(线性介质)$W=\frac{1}{2}\int_{\infty}\bm{E}\cdot\bm{D}dV=\frac{1}{2}\int_V\rho\varphi dV$\tiny$=\frac{1}{8\pi\varepsilon}\int dV\int dV'\frac{\rho(\bm{x})\rho(\bm{x}')}{r}$\scriptsize\\
+\textbf{电势为$\varphi_e$的外场对电荷体系的作用能}$W=\int_V\rho(\bm{x})\varphi_e(\bm{x})dV=q\varphi_e(0)+\bm{p}\cdot\nabla\varphi_e(0)+\frac{1}{6}\sum_{i,j=1}^3\mathcal{D}_{ij}\frac{\partial^2}{\partial x_i\partial x_j}\varphi_e(0)+\cdots$~~~~~~~~其中$\varphi_e(0)$为外场在原点的电势\\
+\textbf{外场对电荷体系作用能}$W=\int_V\rho(\bm{x})\varphi_e(\bm{x})dV$\\
+\indent\textbf{外场对电偶极子作用能}$W^{(1)}=\bm{p}\cdot\nabla\varphi_e=-\bm{p}\cdot\bm{E}_e$\\
+\indent\textbf{外场对电偶极子作用力}$\bm{F}=-\nabla W^{(1)}=\bm{p}\cdot\nabla\bm{E}_e$\\
+\indent\textbf{外场对电偶极子力矩}$L_{\theta}=-\frac{\partial W^{(1)}}{\partial\theta}=\bm{p}\times\bm{E}_e$\\
+\indent\textbf{外场对电四极矩作用能}$W^{(2)}=-\frac{1}{6}\sum_{i,j=1}^3\mathcal{D}_{ij}\frac{\partial^2}{\partial x_i\partial x_j}\bm{E}_e$
+\end{multicols}
+
+\begin{multicols}{2}
+\noindent\textbf{Chap3静磁场}\\
+定义\textbf{矢势}$\bm{B}=\nabla\times\bm{A}$ 故 $\int_S\bm{B}\cdot d\bm{S}=\oint_L\bm{A}\cdot d\bm{l}$\\
+库伦规范$\nabla^2\bm{A}=-\mu_0\bm{J},\nabla\cdot\bm{A}=0$下，$\bm{A}(\bm{x})=\frac{\mu_0}{4\pi}\int_V\frac{\bm{J}(\bm{x}')}{r}dV'$\\
+\textbf{边值关系}$\bm{A}_1=\bm{A}_2,\bm{e}_n\times(\frac{1}{\mu_2}\nabla\times\bm{A}_2-\frac{1}{\mu_1}\nabla\times\bm{A}_1)$\\
+定义\textbf{磁标势}$\bm{H}=-\nabla\varphi_m$和\textbf{假想磁荷密度}$\rho_m=-\mu_0\nabla\cdot\bm{M}$得\textbf{磁标势方程}$\nabla^2\varphi_m=-\frac{\rho_m}{\mu_0}$\\
+\textbf{边值关系}$\bm{e}_n\times(-\nabla\varphi_2+\nabla\varphi_1)=\bm{\alpha}_f$,$B_{2n}=B_{1n}$\\
+\indent对线性均匀介质，且界面上$\bm{\alpha}_f=0$，有$\varphi_2=\varphi_1,\mu_2\frac{\partial\varphi_2}{\partial n}=\mu_1\frac{\partial\varphi_1}{\partial n}$\\
+磁标势法用静电场类比静磁场\\
+\tiny$\left\{\begin{array}{ll}\nabla\times\bm{E}=0&\nabla\times\bm{H}=0\\\nabla\cdot\bm{E}=\frac{(\rho_f+\rho_P)}{\varepsilon_0}&\nabla\cdot\bm{H}=\frac{\rho_m}{\mu_0}\\\rho_P=-\nabla\cdot\bm{P}&\rho_m=-\mu_0\nabla\cdot\bm{M}\end{array}\right.\left\{\begin{array}{ll}\bm{D}=\varepsilon_0\bm{E}+\bm{P}&\bm{B}=\mu_0\bm{H}+\mu_0\bm{M}\\\bm{E}=-\nabla\varphi&\bm{H}=-\nabla\varphi_m\\\nabla^2\varphi=-\frac{(\rho_f+\rho_P)}{\varepsilon_0}&\nabla^2\varphi_m=-\frac{\rho_m}{\mu_0}\end{array}\right.$\scriptsize\\
+\textbf{磁矢势多级展开式}$\bm{A}(\bm{x})=\frac{\mu_0}{4\pi}\int_V\bm{J}(\bm{x}')[\frac{1}{R}-\bm{x}'\cdot\nabla\frac{1}{R}+\cdots]dV'$\\
+\indent其中无磁单极矩$\int_VJ(\bm{x})dV'=0,\bm{A}^{(1)}=0$\\
+\indent\indent\textbf{磁偶极矩}$\bm{m}=\frac{1}{2}\int_V\bm{x}'\times\bm{J}(\bm{x}')dV'=\frac{I}{2}\oint_L\bm{x}'\times d\bm{l}'=I\Delta\bm{S}$\\
+\indent\indent\textbf{磁偶极矩产生的矢势}$\bm{A}^{(1)}=\frac{\mu_0}{4\pi}\frac{\bm{m}\times\bm{R}}{R^3}$\\
+\indent\indent\textbf{磁偶极矩产生的磁场}$\bm{B}(\bm{x})=\nabla\times\bm{A}^{(1)}=\frac{\mu_0}{4\pi}[\frac{3(\bm{m}\cdot\bm{R})\bm{R}}{R^5}-\frac{\bm{m}}{R^3}]$\\
+\textbf{静磁场总能量}$W=\int_{\infty}\frac{1}{2}\bm{B}\cdot\bm{H}dV=\int_V\bm{A}\cdot\bm{J}dV$(后者仅需对电流分布区域积分)\\
+\indent\textbf{外磁场对电流作用能}(不考虑电磁感应)$W=\int_V\bm{J}(\bm{x})\bm{A}_e(\bm{x})dV$\\
+\indent\textbf{外场对磁偶极子作用能}$W^{(1)}=-\bm{m}\cdot\bm{B}_e$\\
+\indent\textbf{外场对磁偶极子作用力}$\bm{F}=-\nabla W^{(1)}=\bm{m}\cdot\nabla\bm{B}_e$\\
+\indent\textbf{外场对磁偶极子力矩}$\bm{L}=\bm{m}\times\bm{B}_e$
+\end{multicols}
+
+\begin{multicols}{2}
+\noindent\textbf{Chap4电磁波的传播}\\
+\textbf{真空中的波动方程}~取麦氏方程组第一式旋度并利用第二、三式得$\nabla^2\bm{E}-\frac{1}{c^2}\frac{\partial^2\bm{E}}{\partial t^2}=0$\\
+\indent取第二式旋度并利用第一、四式得$\nabla^2\bm{B}-\frac{1}{c^2}\frac{\partial^2\bm{B}}{\partial t^2}=0$~~~~~~~~其中$c=\frac{1}{\sqrt{\mu_0\varepsilon_0}}$\\
+\textbf{时谐电磁波}$\bm{E}(\bm{x},t)=\bm{E}(\bm{x})e^{-i\omega t},\bm{B}(\bm{x},t)=\bm{B}(\bm{x})e^{-i\omega t}$\\
+\indent代入麦氏方程组得$\left\{\begin{array}{ll}\nabla\times\bm{E}=i\omega\mu\bm{H}&\nabla\cdot\bm{E}=0\\\nabla\times\bm{H}=-i\omega\varepsilon\bm{E}&\nabla\cdot\bm{H}=0\end{array}\right.$\\
+\indent可化为$\left\{\begin{array}{l}\nabla^2\bm{E}+k^2\bm{E}=0\\\nabla\cdot\bm{E}=0\\\bm{B}=-\frac{i}{\omega}\nabla\times\bm{E}\end{array}\right.$ 或 $\left\{\begin{array}{l}\nabla^2\bm{B}+k^2\bm{B}=0\\\nabla\cdot\bm{B}=0\\\bm{E}=\frac{i}{k\sqrt{\mu\varepsilon}}\nabla\times\bm{B}\end{array}\right.$~~~~~~~~其中$k=\omega\sqrt{\mu\varepsilon}$\\
+\textbf{线性均匀绝缘介质中单色波相速度}$v=\frac{c}{n}$~~~~~~~~其中折射率$n=\sqrt{\mu_r\varepsilon_r}$\\
+电磁波为横波，电场方向(偏振方向)、磁场方向、传播方向两两正交，$\bm{k}\cdot\bm{E}=\bm{k}\cdot\bm{B}=\bm{E}\cdot\bm{B}=0$~~~~~~~~\textbf{电磁场振幅比}$|\frac{E}{B}|=\frac{1}{\sqrt{\mu\varepsilon}}=v$\\
+\textbf{电磁场能量密度}(线性均匀介质)$w=\frac{1}{2}(\varepsilon E^2+\frac{1}{\mu}B^2)=(\because\text{电磁场能量相等})\varepsilon E^2=\frac{1}{\mu}B^2$\\
+\textbf{能流密度}$\bm{S}=\bm{E}\times\bm{H}=\sqrt{\frac{\varepsilon}{\mu}}\bm{E}\times(\bm{e}_k\times\bm{E})=\sqrt{\frac{\varepsilon}{\mu}}E^2\bm{e}_k=\frac{1}{\sqrt{\mu\varepsilon}}w\bm{e}_k=vw\bm{e}_k$\\
+\textbf{能量密度平均值}$\bar{w}=\frac{1}{2}\varepsilon E_0^2=\frac{1}{2\mu}B_0^2$\\
+\textbf{能流密度平均值}$\bar{S}=\frac{1}{2}\text{Re}(\bm{E}^*\times\bm{H})=\frac{1}{2}\sqrt{\frac{\varepsilon}{\mu}}E_0^2\bm{e}_k$\\
+\textbf{电磁波的反射与折射}~在介质界面上仅需考虑$\bm{e}_n\times(\bm{E}_2-\bm{E}_1)=0,\bm{e}_n\times(\bm{H}_2-\bm{H}_1)=\bm{\alpha}$\\
+\textbf{反射和折射定律}$\theta=\theta'$~~~~~~~~$\frac{\sin\theta}{\sin\theta''}=\frac{v_1}{v_2}=\frac{\sqrt{\mu_2\varepsilon_2}}{\sqrt{\mu_1\varepsilon_1}}=\frac{n_2}{n_1}=n_{21}$\\
+\textbf{菲涅尔公式}~对$\bm{E}\perp$入射面($s$偏振)~$E+E'=E'',H'\cos\theta-H'\cos\theta'=H''\cos\theta''$\\
+\indent\indent$\Rightarrow\text{非铁磁性介质}\sqrt{\varepsilon_1}(E-E')\cos\theta=\sqrt{\varepsilon_2}E''\cos\theta''$结合折射定律得\\
+\indent\indent$\left\{\begin{array}{l}\frac{E'}{E}=\frac{\sqrt{\varepsilon_1}\cos\theta-\sqrt{\varepsilon_2}\cos\theta''}{\sqrt{\varepsilon_1}\cos\theta+\sqrt{\varepsilon_2}\cos\theta''}=-\frac{\sin(\theta-\theta'')}{\sin(\theta+\theta'')}\\\frac{E''}{E}=\frac{2\sqrt{\varepsilon_1}\cos\theta}{\sqrt{\varepsilon_1}\cos\theta+\sqrt{\varepsilon_2}\cos\theta''}=\frac{2\cos\theta\sin\theta''}{\sin(\theta+\theta'')}\end{array}\right.$\\
+\indent对$\bm{E}\parallel$入射面($p$偏振)~$E\cos\theta-E'\cos\theta=E''\cos\theta'',H+H'=H''$\\
+\indent\indent$\Rightarrow\sqrt{\varepsilon_1}(E+E')=\sqrt{\varepsilon_2}E''$结合折射定律得\\
+\indent\indent$\frac{E'}{E}=\frac{\tan(\theta-\theta'')}{\tan(\theta+\theta'')},\frac{E''}{E}=\frac{2\cos\theta\sin\theta''}{\sin(\theta+\theta'')\cos(\theta-\theta'')}$\\
+\textbf{反射系数}$R_s=\frac{E_s'^2}{E_s^2}=\frac{\sin^2(\theta-\theta'')}{\sin^2(\theta+\theta'')},R_p=\frac{E_p'^2}{E_p^2}=\frac{\tan^2(\theta-\theta'')}{\tan^2(\theta+\theta'')}$\\
+当正入射$\theta=0$，$R_s=R_p=(\frac{n_2-n_1}{n_2+n_1})^2$~~~~~~~~无损耗时，$R+T=1$\\
+\tiny\textbf{折射系数}\scriptsize$T_s=\frac{E_s''^2\sqrt{\varepsilon_2}\cos\theta''}{E_s^2\sqrt{\varepsilon_1}\cos\theta}=\frac{\sin2\theta\sin2\theta''}{\sin^2(\theta+\theta'')},T_p=\frac{E_p''^2\sqrt{\varepsilon_2}\cos\theta''}{E_p^2\sqrt{\varepsilon_1}\cos\theta}=\frac{4\sin2\theta\sin2\theta''}{(\sin2\theta+\sin2\theta'')^2}$\\
+\textbf{布儒斯特角}满足$\theta+\theta''=90^{\circ},\tan\theta_B=\frac{n_2}{n_1}$，此时$p$偏振无反射\\
+当光密入射光疏介质$n_{21}<1$，$\theta$大于临界角$\sin\theta_c=n_{21}$，全反射，折射波电场$\bm{E}''=$\\
+\indent$\bm{E}_0''e^{-\kappa z}e^{i(k_x''x-\omega t)}$~\tiny其中$k_x''=k_x=k\sin\theta,k_z''=\sqrt{k''^2-k_x''^2}=ik\sqrt{\sin^2\theta-n_{21}^2}=i\kappa$\scriptsize\\
+\indent此时$\frac{E'}{E}=\frac{\cos\theta-i\sqrt{\sin^2\theta-n_{21}^2}}{\cos\theta+i\sqrt{\sin^2\theta-n_{21}^2}}=e^{-2i\phi},\tan\phi=\frac{\sqrt{\sin^2\theta-n_{21}^2}}{\cos\theta}$折射波平均能流密\\
+\indent度$\bar{S}_x''=\frac{1}{2}\text{Re}(E_s''^*H_z'')=\frac{1}{2}\sqrt{\frac{\varepsilon_2}{\mu_2}}|E_0''|^2e^{-2\kappa z}\frac{\sin\theta}{n_{21}},\bar{S}_z''=-\frac{1}{2}\text{Re}(E_s''^*H_x'')=0$\\
+导体内$\frac{\partial\rho}{\partial t}=-\nabla\cdot\bm{J}=-\frac{\sigma}{\varepsilon}\rho\Rightarrow\rho=\rho_0e^{-\frac{\sigma}{\varepsilon}t}$,特征时间$\tau=\frac{\varepsilon}{\sigma}$,若$\omega\ll\tau^{-1}$,视为良导体\\
+良导体内麦氏方程组$\left\{\begin{array}{l}\nabla\times\bm{E}=i\omega\mu\bm{H}\\\nabla\times\bm{H}=-i\omega\varepsilon\bm{E}+\sigma\bm{E}\\\nabla\cdot\bm{E}=0\\\nabla\cdot\bm{H}=0\end{array}\right.\left.\begin{array}{l}\text{引入复电容率}\varepsilon'=\varepsilon+i\frac{\sigma}{\omega}\\\text{有}\nabla\times\bm{H}=-i\omega\varepsilon'\bm{E}\\\text{且各反、折射规律与前同}\end{array}\right.$\\
+\textbf{反射和折射定律}$\theta=\theta',\frac{\sin\theta}{\sin\theta''}=\frac{\hat{n}_2}{n_1},\hat{n}_2=c\sqrt{\mu_0\varepsilon'}=n+i\kappa$\\
+\indent\indent其中$n^2=\frac{c^2}{2}[\sqrt{\varepsilon^2+(\frac{\sigma}{\omega})^2}+\varepsilon],\kappa^2=\frac{c^2}{2}[\sqrt{\varepsilon^2+(\frac{\sigma}{\omega})^2}-\varepsilon]$\\
+\indent实折射角Re$(\theta'')=\tan^{-1}[\frac{n_1\sin\theta}{q(n\cos\gamma-\kappa\sin\gamma)}]$，衰减深度$2\frac{\omega}{c}q(\kappa\cos\gamma+n\sin\gamma)$\\
+\indent\indent其中$q^2\cos2\gamma=1-\frac{n^2-\kappa^2}{(n^2+\kappa^2)^2}(n_1\sin\theta)^2,q^2\sin2\gamma=\frac{2n\kappa}{(n^2+\kappa^2)^2}(n_1\sin\theta)^2$\\
+\textbf{反射系数}$R_s=|\frac{\sin(\theta-\theta'')}{\sin(\theta-\theta'')}|^2,R_p=|\frac{\tan(\theta-\theta'')}{\tan(\theta+\theta'')}|^2$~~~~~~~~当垂直入射$R_s=R_p=$\\
+\indent$|\frac{\hat{n}_2-n_1}{\hat{n}_2+n_1}|^2=\frac{(n-n_1)^2+\kappa^2}{(n+n_1)^2+\kappa^2}$~~~~~~~~折射波电场$\bm{E}(\bm{x},t)=\bm{E}_0e^{-\frac{\omega}{c}\kappa z+i\frac{\omega}{c}nz-i\omega t}$\\
+\textbf{射频谐振腔}~在导体表面仅需考虑$\bm{e}_n\times\bm{E}=0,\bm{e}_n\times\bm{H}=\bm{\alpha}$ 再由$\nabla\cdot\bm{E}=0$得$\frac{\partial E_n}{\partial n}=0$\\
+矩形谐振腔~分离变量得$\bm{E}$或$\bm{H}$的任一正交分量$u(x,y,z)=$\\
+\indent$(C_1\cos k_xx+D_1\sin k_xx)(C_2\cos k_yy+D_2\sin k_yy)(C_3\cos k_zz+D_3\sin k_zz)$\\
+\indent\tiny由边界条件得\scriptsize$\left\{\begin{array}{l}E_x=A_1\cos k_xx\sin k_yy\sin k_zz\\E_y=A_2\sin k_xx\cos k_yy\sin k_zz\\E_z=A_3\sin k_xx\sin k_yy\cos k_zz\end{array}\right.$\tiny其中\scriptsize$\left\{\begin{array}{l}k_x=\frac{m\pi}{L_1}\\k_y=\frac{n\pi}{L_2}~m,n,p=0,1,\cdots\\k_z=\frac{p\pi}{L_3}\\k_xA_1+k_yA_2+k_zA_3=0\end{array}\right.$\\
+\indent\textbf{本征频率}$\omega_{mnp}=\frac{\pi}{\sqrt{\mu\varepsilon}}\sqrt{(\frac{m}{L_1})^2+(\frac{n}{L_2})^2+(\frac{p}{L_3})^2}$\\
+矩形\textbf{波导}~分离变量$u(x,y,z)=X(x)Y(y)e^{ik_zz},\frac{d^2X}{dx^2}+k_x^2X=0,\frac{d^2Y}{dy^2}+k_y^2Y=0$\\
+\indent\tiny由边界条件得\scriptsize$\left\{\begin{array}{l}E_x=A_1\cos k_xx\sin k_yye^{ik_zz}\\E_y=A_2\sin k_xx\cos k_yye^{ik_zz}\\E_z=A_3\sin k_xx\sin k_yye^{ik_zz}\end{array}\right.$\tiny其中\scriptsize$\left\{\begin{array}{l}k_x=\frac{m\pi}{a}\\k_y=\frac{n\pi}{b}~m,n=0,1,\cdots\\k_x^2+k_y^2+k_z^2=k^2\\k_xA_1+k_yA_2-ik_zA_3=0\end{array}\right.$\\
+$(m,n)$型波的\textbf{截止频率}$\omega_{c,mn}=\frac{\pi}{\sqrt{\mu\varepsilon}}\sqrt{(\frac{m}{a})^2+(\frac{n}{b})^2}$，超过则$k_z$为虚数，振幅沿$z$衰减\\
+\textbf{等离子体}内外电荷分布$\rho_e(\bm{x})$产生电势$\varphi(\bm{x})=\int\frac{\rho_e(\bm{x})}{4\pi\varepsilon_0|\bm{x}-\bm{x}'|}e^{-|\bm{x}-\bm{x}'|}dV'$\\
+\indent在屏蔽长度$\lambda=\sqrt{\frac{kT\varepsilon_0}{n_0e^2}}$外可忽略，其中$n_0$为在$\varphi(\bm{x})=0$热平衡下电子密度\\
+\textbf{等离子体振荡}$\frac{\partial n}{\partial t}+\nabla\cdot(n\bm{v})=0,m\frac{d\bm{v}}{dt}=m(\frac{\partial\bm{v}}{\partial t}+\bm{v}\nabla\cdot\bm{v})=-e\bm{E},\nabla\cdot\bm{E}=-\frac{(n-n_0)e}{\varepsilon_0}$\\
+\indent设$n'=n-n_0$和$\bm{v}$为一阶小量后有$\frac{\partial n'}{\partial t}+n_0\nabla\cdot\bm{v}=0,\frac{\partial\bm{v}}{\partial t}=-\frac{e}{m}\bm{E},\nabla\cdot\bm{E}=-\frac{e}{\varepsilon}n'$\\
+\indent$n'(t)=n'(0)e^{i\omega_pt}$，其中振荡频率$\omega_p=\sqrt{\frac{n_0e^2}{m_e\varepsilon_0}},m$为电子质量(忽略阻尼)\\
+\textbf{电磁波在等离子体中的传播}$\frac{\partial\bm{v}}{\partial t}=-\frac{e}{m}(\bm{E}_i+\bm{E}_e)$，\tiny因$\nabla\bm{E}_e=0$\scriptsize，内场$\bm{E}_i$引起的振荡同前\\
+\indent外场下$\frac{\partial\bm{J}}{\partial t}=\frac{n_0e^2}{m}\bm{E}_e$，设$\bm{E}_(\bm{x},t)=\bm{E}(\bm{x})e^{-i\omega t}$，欧姆定律$\bm{J}(\omega)=\sigma(\omega)\bm{E}_e$\\
+\indent其中虚数电导率$\sigma(\omega)=i\frac{n_0e^2}{m\omega}$，有效电容率$\varepsilon'=\varepsilon-i\frac{\sigma}{\omega}$，波数$k=\omega\sqrt{\mu_0\varepsilon'}=$\\
+\indent$\frac{\omega}{c}\sqrt{1-(\omega_p/\omega)^2}$，折射率$n=\sqrt{1-(\omega_p^2/\omega^2)^2}$(忽略阻尼和外磁场作用)
+\end{multicols}
+
+\begin{multicols}{2}
+\noindent\textbf{Chap5电磁波的辐射}\\
+\tiny电磁场\scriptsize$\bm{B}=\nabla\times\bm{A},\bm{E}=-\nabla\varphi-\frac{\partial\bm{A}}{\partial t}$\tiny经规范变换\scriptsize$\bm{A}\to\bm{A}'=\bm{A}+\nabla\psi,\varphi\to\varphi'=\varphi-\frac{\partial\psi}{\partial t}$\tiny不变\scriptsize~~~~~~~~\textbf{规范}~对$\nabla\bm{A}$的选择~~~~~~~~\textbf{库伦规范}$\nabla\bm{A}=0$~~~~~~~~\textbf{洛伦兹规范}$\nabla\cdot\bm{A}+\frac{1}{c^2}\frac{\partial\varphi}{\partial t}=0$\\
+适用于一般规范的方程组$\left\{\begin{array}{l}\nabla^2\bm{A}-\frac{1}{c^2}\frac{\partial^2\bm{A}}{\partial t^2}-\nabla(\nabla\cdot\bm{A}+\frac{1}{c^2}\frac{\partial\varphi}{\partial t})=-\mu_0\bm{J}\\\nabla^2\varphi+\frac{\partial}{\partial t}\nabla\cdot\bm{A}=-\frac{\rho}{\varepsilon_0}\end{array}\right.$\\
+\indent库仑规范下化为$\left\{\begin{array}{l}\nabla^2\bm{A}-\frac{1}{c^2}\frac{\partial^2\bm{A}}{\partial t^2}-\frac{1}{c^2}\frac{\partial}{\partial t}\nabla\varphi=-\mu_0\bm{J}\\\nabla^2\varphi=-\frac{\rho}{\varepsilon_0}\end{array}\right.$\\
+\indent洛伦兹规范下为达朗贝尔方程$\left\{\begin{array}{l}\nabla^2\bm{A}-\frac{1}{c^2}\frac{\partial^2\bm{A}}{\partial t^2}=-\mu_0\bm{J}\\\nabla^2\varphi-\frac{1}{c^2}\frac{\partial^2\varphi}{\partial t^2}=-\frac{\rho}{\varepsilon_0}\end{array}\right.$其解为\\
+\textbf{推迟势}$\bm{A}(\bm{x},t)=\frac{\mu_0}{4\pi}\int_V\frac{J(\bm{x}',t-r/c)}{r}dV',\varphi(\bm{x},t)=\frac{1}{4\pi\varepsilon_0}\int_V\frac{\rho(\bm{x}',t-r/c)}{r}dV'$\\
+\indent其中$r=|\bm{x}-\bm{x}'|$，若$\bm{J}(\bm{x'},t)=\bm{J}(\bm{x}')e^{-i\omega t}$，则\\
+\indent$\bm{A}(\bm{x},t)=\bm{A}(\bm{x})e^{-i\omega t},\bm{A}(\bm{x})=\frac{\mu_0}{4\pi}\int_V\frac{\bm{J}(\bm{x}')e^{ikt}}{r}dV'$~~~~~~~~当$l\ll\lambda,l\ll r$，分3类\\
+\indent(1)\textbf{近区}$r\ll\lambda,kr\ll1\Rightarrow e^{ikr}\ll1$近似恒定场；(2)\textbf{感应区}$r\sim\lambda,$过渡区域；\\
+\indent(3)\textbf{远区}$r\gg\lambda\Rightarrow r\approx R-\bm{e}_R\cdot\bm{x}',\bm{A}(\bm{x})=\frac{\mu_0}{4\pi}\int_V\frac{\bm{J}(\bm{x}')e^{ik(\bm{R}-\bm{e}_R\cdot\bm{x}')}}{R-\bm{e}_R\cdot\bm{x}'}dV',\bm{B}=\nabla\times\bm{A}\approx ik\bm{e}_R\times\bm{A},\bm{E}=c\bm{B}\times\bm{e}_R,\bm{R}$由坐标原点至场点，近似辐射场\\
+\textbf{辐射场多级展开式}(远区)$\bm{A}(\bm{x})=\frac{\mu_0e^{ikR}}{4\pi R}\int_V\bm{J}(\bm{x}')[1-ik\bm{e}_R\cdot\bm{x}'+\cdots]dV'$\\
+\indent首项--电偶极$\bm{p}=\bm{p}_0e^{ikR}$辐射场$\bm{A}=\frac{\mu_0e^{ikR}}{4\pi R}\dot{\bm{p}},\bm{B}=ik\bm{e}_R\times\bm{A}=\frac{e^{ikR}}{4\pi\varepsilon_0c^3R}\ddot{\bm{p}}\times\bm{e}_R$\\
+\indent\indent$\bm{E}=c\bm{B}\times\bm{e}_R=\frac{e^{ikR}}{4\pi\varepsilon_0c^2R}(\ddot{\bm{p}}\times\bm{e}_R)\times\bm{e}_R$\\
+\indent\textbf{平均辐射能流}$\bar{\bm{S}}=\frac{1}{2}\text{Re}(\bm{E}^*\times\bm{H})=\frac{c}{2\mu_0}\text{Re}[(\bm{B}^*\times\bm{e}_R)\times\bm{B}]=\frac{c}{2\mu_0}(\bm{B}^*\cdot\bm{B})\bm{e}_R=$\\
+\indent$\frac{\mu_0\omega^4p_0^2}{32\pi^2cR^2}\sin^2\theta\bm{e}_R,\sin^2\theta$--\tiny角分布因子\scriptsize~\textbf{平均辐射功率}$\bar{P}=\oint_S\bar{S}\cdot R^2d\Omega\bm{e}_R=\frac{\mu_0\omega^4p_0^2}{12\pi c}$\\
+\indent第2项$=$磁偶极$+$电四极辐射，磁偶极$\bm{m}=\bm{m}_0e^{-i\omega t}$辐射场$\bm{A}=\frac{ik\mu_0e^{ikR}}{4\pi R}\bm{e}_R\times\bm{m}$\\
+\indent\indent$\bm{B}=ik\bm{e}_R\times\bm{A}=\frac{\mu_0e^{ikR}}{4\pi c^2R}(\ddot{\bm{m}}\times\bm{e}_R)\times\bm{e}_R,\bm{E}=c\bm{B}\times\bm{e}_R=-\frac{\mu_0e^{ikR}}{4\pi cR}\ddot{\bm{m}}\times\bm{e}_R$\\
+\indent\textbf{平均辐射能流}$\bar{S}=\frac{c}{2\mu_0}(\bm{B}^*\cdot\bm{B})\bm{e}_R=\frac{\mu_0\omega^4m_0^2}{32\pi^2c^3R^2}\sin^2\theta\bm{e}_R$\\
+\indent\textbf{平均辐射功率}$\bar{P}=\frac{\mu_0\omega^4m_0^2}{12\pi c^3}$\\
+\indent\textbf{电四极辐射场}$\bm{A}=-\frac{ik\mu_0e^{ikR}}{24\pi R}\dot{\bm{\mathcal{D}}}=\frac{\mu_0e^{ikR}}{24\pi cR}\ddot{\bm{\mathcal{D}}}$~~~~其中$\bm{\mathcal{D}}=\bm{e}_R\cdot\overset{\twoheadrightarrow}{\mathcal{D}}$\\
+\indent$\bm{B}=\frac{\mu_0e^{ikR}}{24\pi c^2R}\dddot{\bm{\mathcal{D}}}\times\bm{e}_R,\bm{E}=c\bm{B}\times\bm{e}_R$\\
+\indent\textbf{平均辐射能流}$\frac{c}{2\mu_0}(\bm{B}^*\cdot\bm{B})\bm{e}_R=\frac{\mu_0}{4\pi}\frac{1}{288\pi c^3R^2}(\dddot{\bm{\mathcal{D}}}\times\bm{e}_R)^2\bm{e}_R$\\
+\indent\textbf{平均辐射功率}$\bar{P}=\frac{\mu_0}{4\pi}\frac{1}{360c^3}\sum_{i,j=1}^3|\dddot{\bm{\mathcal{D}}}_{ij}|^2$\\
+\textbf{短天线辐射}$I(z)=I_0(1-\frac{2}{l}|z|),|z|\leq\frac{l}{2}\ll\lambda$~~~~电偶极变化率$\dot{\bm{p}}=\int_{-l/2}^{l/2}\bm{I}(z)dz=\frac{1}{2}I_0\bm{l}$\\
+\indent功率$P=\frac{\mu_0I_0^2\omega^2l^2}{48\pi c}=\frac{\pi}{12}\sqrt{\frac{\mu_0}{\varepsilon_0}}I_0^2(\frac{l}{\lambda})^2=\frac{1}{2}R_rI_0^2$~~~~辐射电阻$R_r=\frac{\pi}{6}\sqrt{\frac{\mu_0}{\varepsilon_0}}(\frac{l}{\lambda})^2$\\
+\textbf{天线辐射}$I(z)=I_0\sin k(\frac{l}{2}-|z|)=(\text{当}l=\frac{\lambda}{2})I_0\cos kz,|z|\leq\frac{l}{2}\sim\lambda$\\
+\indent辐射场$\bm{A}(\bm{x})=\frac{\mu_0}{4\pi}\int_{\lambda/4}^{\lambda/4}\frac{e^{ikr}}{r}I_0\cos kzdz=\frac{\mu_0I_0e^{ikR}}{2\pi kR}\frac{\cos(\frac{\pi}{2}\cos\theta)}{\sin^2\theta}\bm{e}_z$\\
+\indent能流密度$\bar{S}=\frac{1}{2}\text{Re}(\bm{E}^*\times\bm{H})=\frac{\mu_0cI_0^2}{8\pi^2R^2}\frac{\cos^2(\frac{\pi}{2}\cos\theta)}{\sin^2\theta}\bm{e}_R$，角分布$\frac{\cos^2(\frac{\pi}{2}\cos\theta)}{\sin^2\theta}$\\
+\indent功率$P=\oint|\bar{\bm{S}}|R^2d\Omega=\frac{\mu_0cI_0^2}{4\pi}\int_0^{\pi}\frac{\cos^2(\frac{\pi}{2}\cos\theta)}{\sin\theta}d\theta$\\
+\textbf{电磁波衍射}~任一分量满足$(\nabla^2+k^2)\varphi=0$~用格林函数法$(\nabla^2+k^2)G=-4\pi\delta(\bm{x}-\bm{x}')\\
+\indent\Rightarrow$\textbf{基尔霍夫公式}$\varphi(\bm{x})=-\frac{1}{4\pi}\oint_S\frac{e^{ikr}}{r}\bm{e}_n\cdot[\nabla'\varphi(\bm{x}')+(ik-\frac{1}{r})\frac{\bm{r}}{r}\varphi(\bm{x}')]dS'$\\
+\textbf{夫琅禾费小孔衍射}$\varphi(\bm{x})=-\frac{i\varphi_0e^{ikR}}{4\pi R}\int_{S_0}e^{i(\bm{k}_1-\bm{k}_2)\cdot\bm{x}'}(\cos\theta_1+\cos\theta_2)dS'$\\
+\indent\tiny其中$\varphi$--入射波振幅，$R$--孔心距场点，$S_0$--孔面积，$\bm{x}'$--孔上任一点，$\theta_{1/2}$--孔前/后波矢$\bm{k}_{1/2}$与孔面法线夹角\scriptsize\\
+\textbf{电磁场动量密度}$\bm{g}=\varepsilon_0\bm{E}\times\bm{B}=\frac{\bm{S}}{c^2}=\frac{w}{c}\bm{e}_k$\\
+\textbf{动量流密度}$\overset{\twoheadrightarrow}{\mathcal{T}}=-\varepsilon_0\bm{E}\bm{E}-\frac{1}{\mu_0}\bm{B}\bm{B}+\frac{1}{2}(\varepsilon_0E^2+\frac{1}{\mu_0}B^2)\overset{\twoheadrightarrow}{\mathcal{I}}=(\text{真空中})cg\bm{e}_{k}\bm{e}_{k}=w\bm{e}_k\bm{e}_k$\\
+\textbf{动量守恒定律}$\int_V\bm{f}dV+\frac{d}{dt}\int_V\bm{g}dV=-\int_V\cdot\overset{\twoheadrightarrow}{\mathcal{T}}dV=-\oint_Sd\bm{S}\cdot\overset{\twoheadrightarrow}{\mathcal{T}}$ 或 $\bm{f}+\frac{\partial\bm{g}}{\partial t}=-\nabla\cdot\overset{\twoheadrightarrow}{\mathcal{T}}$\\
+\textbf{辐射压强}(完全反射)$P=-\bm{e}_n\cdot\overset{\twoheadrightarrow}{\mathcal{T}}=2\bar{w}_i\cos^2\theta$~~~~其中$w_i$--入射波能量密度，$\theta$--入射角
+\end{multicols}
+
+\begin{multicols}{2}
+\noindent\textbf{Chap6狭义相对论}\\
+\tiny\textbf{相对论基本原理~1.~相对性原理}~所有参考系均等价，物理规律对所有惯性系均为相同形式\\
+\indent\textbf{2. 光速不变原理}~真空中光速对任一惯性系沿任一方向恒为$c$\scriptsize\\
+\textbf{间隔不变性}~惯性系$\Sigma$中任意两事件$(x_1,y_1,z_1,t_1)$和$(x_2,y_2,z_2,t_2)$的间隔为$s^2=c^2(t_2-t_1)^2-(x_2-x_1)^2-(y_2-y_1)^2-(z_2-z_1)^2$\\
+\indent惯性系$\Sigma'$中对应两事件$(x_1',y_1',z_1',t_1')$和$(x_2',y_2',z_2',t_2')$的间隔为$s'^2=c^2(t_2'-t_1')^2-(x_2'-x_1')^2-(y_2'-y_1')^2-(z_2'-z_1')^2$~~~~~~~~恒有$s'^2=s^2$\\
+\textbf{洛伦兹变换}~参考系$\Sigma'$相对$\Sigma$以$\bm{v}$运动且两者$x$正向均沿$\bm{v}$\\
+\indent则其时空坐标变换为$\left\{\begin{array}{l}x'=\frac{x-vt}{\sqrt{1-(\frac{v^2}{c^2})^2}}\\y'=y\\z=z'\\t'=\frac{t-\frac{v}{c^2}x}{\sqrt{1-(\frac{v}{c})^2}}\end{array}\right.$~
+%和$\left\{\begin{array}{l}x=\frac{x'+vt'}{\sqrt{1-(\frac{v^2}{c^2})^2}}\\y=y'\\z=z'\\t=\frac{t'+\frac{v}{c^2}x'}{\sqrt{1-(\frac{v}{c})^2}}\end{array}\right.$\\
+速度变换为$\left\{\begin{array}{l}u_x'=\frac{u_x-v}{1-\frac{vu_x}{c^2}}\\u_y'=\frac{u_y\sqrt{1-(\frac{v}{c})^2}}{1-\frac{vu_x}{c^2}}\\u_z'=\frac{u_z\sqrt{1-(\frac{v}{c})^2}}{1-\frac{vu_x}{c^2}}\end{array}\right.$\\
+%和$\left\{\begin{array}{l}u_x=\frac{u_x'+v}{1+\frac{vu_x'}{c^2}}\\u_y=\frac{u_y'\sqrt{1-(\frac{v}{c})^2}}{1+\frac{vu_x'}{c^2}}\\u_z=\frac{u_z'\sqrt{1-(\frac{v}{c})^2}}{1+\frac{vu_x'}{c^2}}\end{array}\right.$\\
+\tiny\textbf{相对论时空结构}~1. $s^2=0$即$r=ct$，类光间隔(光锥，两事件可由光波联系)\\
+\indent2. $s^2>0$即$r<ct$，类时间隔(光锥内，两事件可由低于光速的作用来联系~(a)上半光锥--绝对未来；(b)下半--过去)\\
+\indent3. $s^2<0$即$r>ct$类空间隔(光锥外，两事件绝无联系)~~~~~~~~对于给定两事件此种间隔分类不因参考系改变而改变\scriptsize\\
+\textbf{洛伦兹变换的四维形式}~将三维空间坐标与时间虚数坐标统一为四维坐标\\
+\indent$x_{\mu}=(\bm{x},ict)=(x_1,x_2,x_3,x_4)$，洛伦兹变换可表为$x_{\mu}'=a_{\mu\nu}x_{\nu}$，其中\\
+\indent\textbf{沿$x$特殊洛伦兹变换矩阵}$a=\left[\begin{array}{cccc}\gamma&&0&i\beta\gamma\\0&1&0&0\\0&0&1&0\\-i\beta\gamma&0&0&\gamma\end{array}\right]$其中$\left\{\begin{array}{l}\beta=\frac{v}{c}\\\gamma=\frac{1}{\sqrt{1-(\frac{v}{c})^2}}\end{array}\right.$\\
+\indent因有间隔不变性$x_{\mu}'x_{\mu}'=x_{\mu}x_{\mu}=\text{const}$，洛伦兹变换为正交变换$a_{\mu\nu}a_{\mu\tau}=\delta_{\nu\tau}$即$a^Ta=I~~~~~~~~\left\{\begin{array}{ll}\textbf{洛伦兹标量(不变量)}&\text{在洛伦兹变换下不变}\\\textbf{四维矢量}&\text{满足}V_{\mu}=a_{\mu\nu}V_{\nu}\\\textbf{四维张量}&\text{满足}T_{\mu\nu}'=a_{\mu\lambda}a_{\nu\tau}T_{\lambda\tau}\end{array}\right.$\\
+间隔$d(s^2)=-dx_{\mu}dx_{\mu}$和固有时(物体静止坐标系中测出的时间)$d\tau=\frac{1}{c}ds$为洛伦兹标量\\
+\textbf{四维速度矢量}$U_{\mu}=\frac{dx_{\mu}}{d\tau}=\gamma_{\mu}(u_1,u_2,u_3,ic)$~~~~~~~~\textbf{四维波矢量}$k_{\mu}=(\bm{k},i\frac{\omega}{c})$\\
+\indent特殊洛伦兹变换下相对论多普勒效应和光行差公式$\left\{\begin{array}{l}\omega'=\omega\gamma(1-\frac{v}{c}\cos\theta)\\\tan\theta'=\frac{\sin\theta}{\gamma(\cos\theta-\frac{v}{c})}\end{array}\right.$\\
+\textbf{四维电流密度}$J_{\mu}=\rho_0U_{\mu}=(\bm{J},ic\rho)$~~~~~~~~\textbf{四维势}$A_{\mu}=(\bm{A},i\varphi/c)$\\
+\textbf{协变矢量算符}$\frac{\partial}{\partial x_{\mu}}=(\nabla,\frac{1}{ic}\frac{\partial}{\partial t})=\partial_n$~~~~\textbf{协变标量算符}$\frac{\partial}{\partial x_{\mu}}\frac{\partial}{\partial x_{\mu}}=\nabla^2-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}=\partial_{\mu}\partial_{\mu}$\\
+\textbf{电磁场张量}$F_{\mu\nu}=\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}=\left[\begin{array}{cccc}0&B_3&-B_2&-iE_1/c\\-B_3&0&B_1&-iE_2/c\\B_2&-B_1&0&-iE_3/c\\iE_1/c&iE_2/c&iE_3/c&0\end{array}\right]$\\
+\textbf{电荷守恒定律}$\partial_{\mu}J_{\mu}=0$~~~~~~~~\textbf{洛伦兹规范}$\partial_{\mu}A_{\mu}=0$~~~~~~~~\textbf{达朗贝尔方程}$\partial_{\nu}\partial_{\nu}A_{\mu}=-\mu_0J_{\mu}$\\
+\textbf{麦克斯韦方程}$\partial_{\nu}F_{\mu\nu}=\mu_0J_{\mu},\partial_{\lambda}F_{\mu\nu}+\partial_{\mu}F_{\nu\lambda}+\partial_{\nu}F_{\lambda\mu}=0$\\
+\textbf{能量动量守恒定律}$f_{\mu}=\partial_{\lambda}T_{\mu\lambda}$\\
+\textbf{电磁场变换关系}$\left\{\begin{array}{ll}\bm{E}_{\parallel}'=\bm{E}_{\parallel}&\bm{E}_{\perp}'=\gamma(\bm{E}+\bm{v}\times\bm{B})_{\perp}\\\bm{B}_{\parallel}'=\bm{B}_{\parallel}&\bm{B}_{\perp}'=\gamma(\bm{B}-\frac{\bm{v}}{c^2}\times\bm{E})_{\perp}\end{array}\right.$\\
+\textbf{洛伦兹不变量}$\frac{1}{2}F_{\mu\nu}F_{\mu\nu}=B^2-\frac{1}{c^2}E^2=0,\frac{i}{8}\varepsilon_{\mu\nu\lambda\tau}F_{\mu\nu}F_{\lambda\tau}=\frac{1}{c}\bm{B}\cdot\bm{E}=0$\\
+\textbf{能量--动量四维矢量}$p_{\mu}=m_0U_{\mu}=(\bm{p},p_4)=(\gamma m_0\bm{v},ic\gamma m_0)$\\
+\textbf{动质量}$m=\gamma m_0$ 故\textbf{相对论动量}$\bm{p}=\gamma m_0\bm{v}=m\bm{v}$，\textbf{相对论能量}$W=\gamma m_0c^2=mc^2$\\
+\textbf{能量、动量和质量关系式}$W^2=p^2c^2+m_0^2c^4$~~~~~~~~\textbf{质能关系}$\Delta W=(\Delta M)c^2$\\
+\textbf{四维力矢量}$K_{\mu}=\frac{dp_{\mu}}{d\tau}=(\frac{d\bm{p}}{d\tau},\frac{i}{c}\frac{dW}{d\tau})=(\gamma\bm{F},\frac{i}{c}\gamma\bm{F}\cdot\bm{v})=(\bm{K},\frac{i}{c}\bm{K}\cdot\bm{v})$\\
+\textbf{四维洛伦兹力密度}$f_{\mu}=\rho_0F_{\mu\nu}U_{\nu}=F_{\mu\nu}J_{\nu}=(\bm{f},i\bm{E}\cdot\bm{J}/c)$
+\end{multicols}
+
+\tiny\begin{multicols}{3}
+%\noindent\textbf{矢量微分算子}$\nabla=\frac{\partial}{\partial x}\bm{i}+\frac{\partial}{\partial y}\bm{j}+\frac{\partial}{\partial z}\bm{k}$\\
+%\textbf{梯度}$\nabla u=\frac{\partial u}{\partial x}\bm{i}+\frac{\partial u}{\partial y}\bm{j}+\frac{\partial u}{\partial z}\bm{k}$~~~~\textbf{散度}$\nabla\cdot\bm{E}=\frac{\partial E_x}{\partial x}+\frac{\partial E_y}{\partial y}+\frac{\partial E_z}{\partial z}$\\
+%\textbf{旋度}$\nabla\times\bm{E}=[\bm{i}~\bm{j}~\bm{k};\frac{\partial}{\partial x}~\frac{\partial}{\partial y}~\frac{\partial}{\partial z};E_x~E_y~E_x]=(\frac{\partial E_z}{\partial y}-\frac{\partial E_y}{\partial z})\bm{i}+(\frac{\partial E_x}{\partial z}-\frac{\partial E_z}{\partial x})\bm{j}+(\frac{\partial E_y}{\partial x}-\frac{\partial E_x}{\partial y})\bm{k}$\\
+%\textbf{拉普拉斯算子}$\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$\\
+%\indent作用于函数$\nabla^u=\nabla\cdot(\nabla u)=\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}+\frac{\partial^2u}{\partial z^2}$\\
+%\indent作用于矢量$\nabla^2\bm{E}=(\nabla^2E_x)\bm{i}+(\nabla^2E_y)\bm{j}+(\nabla^2E_z)\bm{k}$\\
+\noindent标量场的梯度无旋$\nabla\times\nabla\varphi=0$~~~~~~~~矢量场的旋度无源$\nabla\cdot\nabla\times\bm{f}=0$\\
+$\nabla(\varphi\psi)=\varphi\nabla\psi+\psi\nabla\varphi$\\
+$\nabla\cdot(\varphi\bm{f})=(\nabla\varphi)\cdot\bm{f}+\varphi\nabla\cdot\bm{f}$\\
+$\nabla\times(\varphi\bm{f})=(\nabla\varphi)\times\bm{f}+\varphi\nabla\times\bm{f}$\\
+$\nabla\cdot(\bm{f}\times\bm{g})=(\nabla\times\bm{f})\cdot\bm{g}-\bm{f}\cdot(\nabla\times\bm{g})$\\
+$\nabla\times(\bm{f}\times\bm{g})=(\bm{g}\cdot\nabla)\bm{f}+(\nabla\cdot\bm{g})\bm{f}-(\bm{f}\cdot\nabla)\bm{g}-(\nabla\cdot\bm{f})\bm{g}$\\
+$\nabla(\bm{f}\cdot\bm{g})=\bm{f}\times(\nabla\times\bm{g})+(\bm{f}\cdot\nabla)\bm{g}+\bm{g}\times(\nabla\times\bm{f})+(\bm{g}\cdot\nabla)\bm{f}$\\
+$\nabla\times(\nabla\times\bm{f})=\nabla(\nabla\cdot\bm{f})-\nabla^2\bm{f}$\\
+$\bm{a}\times(\bm{b}\times\bm{c})=\bm{b}(\bm{a}\cdot\bm{c})-\bm{c}(\bm{a}\cdot\bm{b})$\\
+\textbf{高斯定理}$\iint_{\partial V}\bm{E}\cdot d\bm{S}=\iiint\nabla\cdot\bm{E}dV$\\
+\textbf{格林定理}$\nabla\cdot(u\nabla v)=u\nabla\cdot\nabla v+(\nabla u)\cdot(\nabla v)$\\
+\textbf{斯多克斯定理}$\oint_{\partial S}\bm{E}\cdot d\bm{l}=\iint_S(\nabla\times\bm{E})\cdot d\bm{S}$
+\end{multicols}
+
+\begin{table}[h]
+\centering\tiny
+\begin{tabular}{|c|c|c|c|}\hline
+& 直角坐标系 & 柱坐标系 & 球坐标系\\\hline
+%直角 & & $x=\rho\cos\varphi,y=\rho\sin\varphi,z$ & $x=r\sin\theta\cos\varphi,y=r\sin\theta\sin\varphi,z=r\cos\theta$\\\hline
+%柱 & $\rho=\sqrt{x^2+y^2},\varphi=\arctan(y/x),z=z$ & & $\rho=r\sin\theta,\varphi,z=r\cos\theta$\\\hline
+%球 & $r=\sqrt{x^2+y^2+z^2},\theta=\arccos(z/r),\varphi=\arctan(y/x)$ & $r=\sqrt{\rho^2+z^2},\theta=\arctan(\rho/z),\varphi$ &\\\hline\hline
+%矢量$\bm{A}$ & $A_x\hat{x}+A_y\hat{y}+A_z\hat{z}$ & $A_{\rho}\hat{\rho}+A_{\varphi}\hat{\varphi}+A_z\hat{z}$ & $A_{r}\hat{r}+A_{\theta}\hat{\theta}+A_{\varphi}\hat{\varphi}$\\\hline
+梯度$\nabla f$ & $\frac{\partial f}{\partial x}\hat{x}+\frac{\partial f}{\partial y}\hat{y}+\frac{\partial f}{\partial z}\hat{z}$ & $\frac{\partial f}{\partial\rho}\hat{\rho}+\frac{1}{\rho}\frac{\partial f}{\partial\varphi}\hat{\varphi}+\frac{\partial f}{\partial z}\hat{z}$ & $\frac{\partial f}{\partial r}\hat{r}+\frac{1}{r}\frac{\partial f}{\partial\theta}\hat{\theta}+\frac{1}{r\sin\theta}\frac{\partial f}{\partial\varphi}\hat{\varphi}$\\\hline
+散度$\nabla\cdot\bm{A}$ & $\frac{\partial A_x}{\partial x}+\frac{\partial A_y}{\partial y}+\frac{\partial A_z}{\partial z}$ & $\frac{1}{\rho}\frac{\partial(\rho A_{\rho})}{\partial\rho}+\frac{1}{\rho}\frac{\partial A_{\varphi}}{\partial\varphi}+\frac{\partial A_z}{\partial z}$ & $\frac{1}{r^2}\frac{\partial(r^2A_r)}{\partial r}+\frac{1}{r\sin\theta}\frac{\partial(A_{\theta}\sin\theta)}{\partial\theta}+\frac{1}{r\sin\theta}\frac{\partial A_{\varphi}}{\partial\varphi}$\\\hline
+%旋度$\nabla\times\bm{A}$ & $\begin{array}{l}(\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z})\hat{x}+(\frac{\partial A_x}{\partial z}-\frac{\partial A_z}{\partial x})\hat{y}\\+(\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y})\hat{z}\end{array}$ & $\begin{array}{l}(\frac{1}{\rho}\frac{\partial A_z}{\partial\varphi}-\frac{\partial A_{\varphi}}{\partial z})\hat{\rho}+(\frac{\partial A_{\rho}}{\partial z}-\frac{\partial A_z}{\partial\rho})\hat{\varphi}\\+\frac{1}{\rho}(\frac{\partial(\rho A_{\varphi})}{\partial\rho}-\frac{\partial A_{\rho}}{\partial\varphi})\hat{z}\end{array}$ & $\begin{array}{l}\frac{1}{r\sin\theta}(\frac{\partial(A_{\varphi}\sin\theta)}{\partial\theta}-\frac{\partial A_{\theta}}{\partial\varphi})\hat{r}+\frac{1}{r}(\frac{1}{\sin\theta}\frac{\partial A_r}{\partial\varphi}-\frac{\partial(rA_{\varphi})}{\partial r})\hat{\theta}\\+\frac{1}{r}(\frac{\partial(rA_{\theta})}{\partial r}-\frac{\partial A_r}{\partial\theta})\hat{\varphi}\end{array}$\\\hline
+拉普拉斯算子$\nabla^2$ & $\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$ & $\frac{\partial^2}{\partial\rho^2}+\frac{1}{\rho}\frac{\partial}{\partial\rho}+\frac{1}{\rho^2}\frac{\partial^2}{\partial\varphi^2}+\frac{\partial^2}{\partial z^2}$ & $\frac{1}{r^2}\frac{\partial}{\partial r}(r^2\frac{\partial}{\partial r})+\frac{1}{r^2\sin\theta}\frac{\partial}{\partial\theta}(\sin\theta\frac{\partial}{\partial\theta})+\frac{1}{r^2\sin\theta^2\theta}\frac{\partial^2}{\partial\varphi^2}$\\\hline
+\end{tabular}
+\end{table}
+\end{document}
